@@ -1,0 +1,29 @@
+{
+  "keyboard": {
+    "up": ["UP", "W"],
+    "down": ["DOWN", "S"],
+    "left": ["LEFT", "A"],
+    "right": ["RIGHT", "D"],
+    "confirm": ["Z", "SPACE"],
+    "cancel": ["X", "BACKSPACE"],
+    "menu": ["ENTER", "ESC"],
+    "run": ["SHIFT"],
+    "abilityL": ["Q"],
+    "abilityR": ["E"]
+  },
+  "gamepad": {
+    "buttons": {
+      "confirm": [0],
+      "cancel": [1],
+      "menu": [9],
+      "abilityL": [4],
+      "abilityR": [5],
+      "run": [2],
+      "up": [12],
+      "down": [13],
+      "left": [14],
+      "right": [15]
+    },
+    "stickDeadzone": 0.5
+  }
+}

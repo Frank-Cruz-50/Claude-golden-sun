@@ -1,0 +1,15 @@
+{
+  "title": {
+    "gameTitle": "UNTITLED JRPG",
+    "subtitle": "Part 1",
+    "pressStart": "PRESS START",
+    "footer": "M0 scaffold build"
+  },
+  "preload": {
+    "loading": "Loading..."
+  },
+  "field": {
+    "placeholderLabel": "FIELD (placeholder)",
+    "hint": "Arrows: move  Start: title"
+  }
+}
