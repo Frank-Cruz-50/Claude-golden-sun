@@ -1,0 +1,8 @@
+{
+  "player": { "name": "Wren", "color": "#2b4c9b" },
+  "startMap": "brindlewick",
+  "startSpawn": "start",
+  "walkMsPerTile": 200,
+  "runMsPerTile": 110,
+  "textCharsPerSecond": 50
+}

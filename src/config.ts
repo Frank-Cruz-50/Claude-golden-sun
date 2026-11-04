@@ -8,10 +8,17 @@ export const SceneKeys = {
   Preload: 'Preload',
   Title: 'Title',
   Field: 'Field',
+  Dialogue: 'Dialogue',
 } as const;
 
 export const TextureKeys = {
-  Player: 'placeholder-player',
-  Ground: 'placeholder-ground',
-  GroundAlt: 'placeholder-ground-alt',
+  Tiles: 'tiles-placeholder',
+  ChestClosed: 'placeholder-chest-closed',
+  ChestOpen: 'placeholder-chest-open',
+  Sign: 'placeholder-sign',
 } as const;
+
+/** Name of the tileset inside the .tmj files. */
+export const TILESET_NAME = 'placeholder';
+
+export const mapCacheKey = (mapId: string) => `map:${mapId}`;

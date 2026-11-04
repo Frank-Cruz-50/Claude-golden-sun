@@ -1,0 +1,502 @@
+{
+ "compressionlevel": -1,
+ "width": 10,
+ "height": 8,
+ "infinite": false,
+ "orientation": "orthogonal",
+ "renderorder": "right-down",
+ "tiledversion": "1.10.2",
+ "tilewidth": 16,
+ "tileheight": 16,
+ "type": "map",
+ "version": "1.10",
+ "nextlayerid": 4,
+ "nextobjectid": 7,
+ "properties": [
+  {
+   "name": "displayName",
+   "type": "string",
+   "value": "Hesper's Cottage"
+  }
+ ],
+ "layers": [
+  {
+   "id": 1,
+   "name": "ground",
+   "type": "tilelayer",
+   "width": 10,
+   "height": 8,
+   "x": 0,
+   "y": 0,
+   "opacity": 1,
+   "visible": true,
+   "data": [
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    11,
+    15,
+    15,
+    11,
+    11,
+    11,
+    11,
+    14,
+    14,
+    11,
+    11,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    14,
+    11,
+    11,
+    8,
+    8,
+    13,
+    13,
+    8,
+    8,
+    8,
+    12,
+    11,
+    11,
+    8,
+    8,
+    13,
+    13,
+    8,
+    8,
+    8,
+    12,
+    11,
+    11,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    12,
+    11,
+    11,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    11,
+    11,
+    11,
+    11,
+    11,
+    19,
+    11,
+    11,
+    11,
+    11,
+    11
+   ]
+  },
+  {
+   "id": 2,
+   "name": "above",
+   "type": "tilelayer",
+   "width": 10,
+   "height": 8,
+   "x": 0,
+   "y": 0,
+   "opacity": 1,
+   "visible": true,
+   "data": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": 3,
+   "name": "objects",
+   "type": "objectgroup",
+   "draworder": "topdown",
+   "opacity": 1,
+   "visible": true,
+   "x": 0,
+   "y": 0,
+   "objects": [
+    {
+     "id": 1,
+     "name": "from_village",
+     "type": "spawn",
+     "x": 64,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "up"
+      }
+     ]
+    },
+    {
+     "id": 2,
+     "name": "to_village",
+     "type": "warp",
+     "x": 64,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "map",
+       "type": "string",
+       "value": "brindlewick"
+      },
+      {
+       "name": "spawn",
+       "type": "string",
+       "value": "from_cottage"
+      }
+     ]
+    },
+    {
+     "id": 3,
+     "name": "letter",
+     "type": "sign",
+     "x": 48,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "dialogue",
+       "type": "string",
+       "value": "cottage.letter"
+      },
+      {
+       "name": "hidden",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 4,
+     "name": "bookshelf",
+     "type": "sign",
+     "x": 16,
+     "y": 16,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "dialogue",
+       "type": "string",
+       "value": "cottage.bookshelf"
+      },
+      {
+       "name": "hidden",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 5,
+     "name": "maelis",
+     "type": "npc",
+     "x": 96,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "npc",
+       "type": "string",
+       "value": "maelis"
+      }
+     ]
+    },
+    {
+     "id": 6,
+     "name": "chest_hesper",
+     "type": "chest",
+     "x": 128,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "chestId",
+       "type": "string",
+       "value": "cottage.hesper"
+      },
+      {
+       "name": "item",
+       "type": "string",
+       "value": "lantern_oil"
+      },
+      {
+       "name": "qty",
+       "type": "int",
+       "value": 1
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "tilesets": [
+  {
+   "firstgid": 1,
+   "name": "placeholder",
+   "image": "../tilesets/placeholder.png",
+   "imagewidth": 128,
+   "imageheight": 48,
+   "columns": 8,
+   "tilecount": 24,
+   "tilewidth": 16,
+   "tileheight": 16,
+   "margin": 0,
+   "spacing": 0,
+   "tiles": [
+    {
+     "id": 3,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 4,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 5,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 6,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 9,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 10,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -3,13 +3,14 @@
     "gameTitle": "SPIRITBOUND",
     "subtitle": "Part 1",
     "pressStart": "PRESS START",
-    "footer": "M0 scaffold build"
+    "footer": "M2 field build"
   },
   "preload": {
     "loading": "Loading..."
   },
   "field": {
-    "placeholderLabel": "FIELD (placeholder)",
-    "hint": "Arrows: move  Start: title"
+    "chestFound": "Found {item} x{qty}!",
+    "chestEmpty": "The chest is empty.",
+    "bagFull": "Your bag can't hold any more {item}."
   }
 }

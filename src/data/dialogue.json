@@ -1,0 +1,37 @@
+{
+  "brindlewick.tobin": [
+    { "speaker": "Tobin", "text": "{player}! There you are. The lanterns go up at moonrise and I've burned two batches of honey cakes." },
+    { "speaker": "Tobin", "text": "Have you seen your aunt? Hesper said she'd make a toast, then she just... wasn't there anymore." }
+  ],
+  "brindlewick.jun": [
+    { "speaker": "Jun", "text": "Cousin! Bet you a honey cake I can hit the miller's weathervane from here." },
+    { "speaker": "Jun", "text": "...Fine. Two honey cakes. Final offer." }
+  ],
+  "brindlewick.miller": [
+    { "speaker": "Miller Oaks", "text": "Lantern Night, and the river's running cold. Never seen it cold in harvest season." }
+  ],
+  "brindlewick.beekeeper": [
+    { "speaker": "Old Bettany", "text": "The bees went quiet at sundown. All of them, all at once." },
+    { "speaker": "Old Bettany", "text": "Bees know things, {player}. Mind yourself tonight." }
+  ],
+  "brindlewick.gatewarden": [
+    { "speaker": "Hob the Watchman", "text": "North road's shut till the festival's done. Nobody leaves Brindlewick on Lantern Night." }
+  ],
+  "brindlewick.locked_door": [
+    { "text": "The door is locked. A lantern glows in the window." }
+  ],
+  "brindlewick.well_sign": [
+    { "text": "BRINDLEWICK WELL\nToss a coin, make a wish. Do not toss the bees." }
+  ],
+  "cottage.letter": [
+    { "text": "A letter in Aunt Hesper's looping hand, addressed to you." },
+    { "text": "\"{player}, the locket is yours now. Keep it closed. Keep it secret. I'm sorry I couldn't stay to explain.\"" }
+  ],
+  "cottage.bookshelf": [
+    { "text": "Maps, hundreds of them. Most are of places you've never heard of." }
+  ],
+  "cottage.maelis": [
+    { "speaker": "Maelis", "text": "Ah. You must be Hesper's {player}. I'm Maelis. I light lamps, mostly." },
+    { "speaker": "Maelis", "text": "That locket around your neck. Don't open it, dear. Not tonight. Not anywhere with windows." }
+  ]
+}

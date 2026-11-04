@@ -30,6 +30,13 @@ export class ActionState {
     this.tapped = new Set(pressedSinceLastStep);
   }
 
+  /** Treats everything currently held as already-seen, so nothing reads as justPressed. */
+  sync(held: Iterable<Action>): void {
+    this.current = new Set(held);
+    this.previous = new Set(this.current);
+    this.tapped.clear();
+  }
+
   isDown(action: Action): boolean {
     return this.current.has(action);
   }

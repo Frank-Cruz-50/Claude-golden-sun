@@ -43,10 +43,22 @@ export class InputManager {
   }
 
   update(): void {
-    const held: Action[] = [];
     const tapped = new Set(this.pending);
     this.pending.clear();
+    this.state.step(this.readHeld(), tapped);
+  }
 
+  /**
+   * Drops pending presses and edge state. Call when control returns to this
+   * scene (e.g. after a dialogue box) so the closing press isn't re-read here.
+   */
+  flush(): void {
+    this.pending.clear();
+    this.state.sync(this.readHeld());
+  }
+
+  private readHeld(): Action[] {
+    const held: Action[] = [];
     const pad = this.activePad();
     const padButtons = bindings.gamepad.buttons as PadBindings;
     const deadzone = bindings.gamepad.stickDeadzone;
@@ -66,7 +78,7 @@ export class InputManager {
       }
       if (down) held.push(action);
     }
-    this.state.step(held, tapped);
+    return held;
   }
 
   isDown(action: Action): boolean {

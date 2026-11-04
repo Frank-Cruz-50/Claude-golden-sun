@@ -1,0 +1,5 @@
+{
+  "herb": { "name": "Herb", "description": "A bitter leaf that closes small wounds.", "category": "consumable" },
+  "honey_cake": { "name": "Honey Cake", "description": "Brindlewick's pride. Restores a little HP and a lot of morale.", "category": "consumable" },
+  "lantern_oil": { "name": "Lantern Oil", "description": "Hesper's oil, bottled with a strange green label.", "category": "consumable" }
+}
