@@ -1,17 +1,19 @@
 import { Canvas, hex } from './lib.mjs';
 import { forestBackground, bristleback, drawWindow, cursor } from './battle.mjs';
-import { characterSheet, PALETTES } from './characters.mjs';
+import { buildSheet } from './sheet.mjs';
+import * as wren from './wren.mjs';
+import * as tobin from './tobin.mjs';
 import { drawText, textWidth } from './font.mjs';
 
 const c = new Canvas(240, 160);
 c.blit(forestBackground(), 0, 0);
 const shadow = (x, y, rx) => { for (let j = -2; j <= 2; j++) for (let i = -rx; i <= rx; i++) if ((i * i) / (rx * rx) + (j * j) / 5 <= 1) c.set(x + i, y + j, hex('#000000', 80)); };
-shadow(52, 98, 24);
-c.blit(bristleback(), 20, 56);
-const party = [[PALETTES.wren, 178, 66], [PALETTES.tobin, 194, 86]];
-for (const [pal, x, y] of party) {
-  shadow(x + 8, y + 23, 6);
-  c.blit(characterSheet(pal), x, y, 0, 24, 16, 24); // left-facing stand
+shadow(58, 104, 32);
+c.blit(bristleback(), 12, 46);
+const party = [[wren, 174, 56], [tobin, 192, 76]];
+for (const [def, x, y] of party) {
+  shadow(x + 12, y + 31, 7);
+  c.blit(buildSheet(def), x, y, 0, 32, 24, 32); // left-facing stand
 }
 // Bottom windows
 drawWindow(c, 0, 112, 90, 48);
@@ -32,5 +34,5 @@ rows.forEach(([name, hp, max, pp, active], i) => {
   for (let k = 0; k < 40; k++) c.set(146 + k, y + 9, k < (40 * hp) / max ? hex('#60e070') : hex('#203020'));
 });
 // Active-turn marker above Wren
-for (const [dx, dy] of [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [1, 1], [2, 1], [3, 1], [2, 2]]) c.set(184 + dx, 60 + dy, yellow);
+for (const [dx, dy] of [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [1, 1], [2, 1], [3, 1], [2, 2]]) c.set(184 + dx, 50 + dy, yellow);
 c.scaled(4).save(process.argv[2]);

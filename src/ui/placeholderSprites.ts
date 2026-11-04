@@ -44,8 +44,8 @@ export function ensureCharTextures(scene: Phaser.Scene, color: string): void {
 /** Soft oval drop shadow drawn under every field character. */
 export function generateShadowTexture(scene: Phaser.Scene, key: string): void {
   const g = scene.make.graphics({}, false);
-  g.fillStyle(0x000000, 0.32).fillEllipse(6, 2.5, 12, 5);
-  g.generateTexture(key, 12, 5);
+  g.fillStyle(0x000000, 0.32).fillEllipse(7, 3, 14, 6);
+  g.generateTexture(key, 14, 6);
   g.destroy();
 }
 

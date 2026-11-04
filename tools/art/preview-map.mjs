@@ -2,7 +2,9 @@
 import { readFileSync } from 'node:fs';
 import { Canvas, hex } from './lib.mjs';
 import { buildTileset } from './tiles.mjs';
-import { characterSheet, PALETTES } from './characters.mjs';
+import { buildSheet } from './sheet.mjs';
+import * as wren from './wren.mjs';
+import * as tobin from './tobin.mjs';
 const map = JSON.parse(readFileSync(new URL('../../assets/maps/art_demo.tmj', import.meta.url)));
 const ts = buildTileset();
 const c = new Canvas(map.width * 16, map.height * 16);
@@ -12,11 +14,11 @@ const draw = (layer) => layer.data.forEach((gid, i) => {
   c.blit(ts, (i % map.width) * 16, Math.floor(i / map.width) * 16, (t % 16) * 16, Math.floor(t / 16) * 16, 16, 16);
 });
 draw(map.layers[0]);
-const shadow = (x, y) => { for (let j = -2; j <= 2; j++) for (let i = -6; i <= 6; i++) if ((i * i) / 36 + (j * j) / 5 <= 1) c.set(x + i, y + j, hex('#000000', 80)); };
-const chars = [[PALETTES.wren, 7, 6, 0], [PALETTES.tobin, 9, 7, 1]];
-for (const [pal, tx, ty, row] of chars) {
+const shadow = (x, y) => { for (let j = -2; j <= 2; j++) for (let i = -7; i <= 7; i++) if ((i * i) / 49 + (j * j) / 5 <= 1) c.set(x + i, y + j, hex('#000000', 80)); };
+const chars = [[wren, 7, 6, 0], [tobin, 9, 7, 1]];
+for (const [def, tx, ty, row] of chars) {
   shadow(tx * 16 + 8, ty * 16 + 14);
-  c.blit(characterSheet(pal), tx * 16, ty * 16 - 8, 0, row * 24, 16, 24);
+  c.blit(buildSheet(def), tx * 16 - 4, ty * 16 - 16, 0, row * 32, 24, 32);
 }
 draw(map.layers[1]);
 const view = new Canvas(240, 160);

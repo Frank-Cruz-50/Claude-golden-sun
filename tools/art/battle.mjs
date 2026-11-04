@@ -64,36 +64,45 @@ export function forestBackground(w = 240, h = 112) {
   return c;
 }
 
-/** Old Bristleback: a huge maddened boar, facing right. 64x44. */
-export function bristleback() {
-  const W = 64, H = 44;
+/** Old Bristleback: a huge maddened boar, facing right. Drawn at scale k (1 = 64x44). */
+export function bristleback(k = 1.35) {
+  const W = Math.round(64 * k), H = Math.round(44 * k);
   const mask = new Array(W * H).fill(false);
   const ell = (cx, cy, rx, ry) => {
-    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2 <= 1) mask[y * W + x] = true;
+    for (let y = 0; y < H; y++)
+      for (let x = 0; x < W; x++) if (((x - cx * k) / (rx * k)) ** 2 + ((y - cy * k) / (ry * k)) ** 2 <= 1) mask[y * W + x] = true;
   };
   const box = (x0, y0, x1, y1) => {
-    for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) mask[y * W + x] = true;
+    for (let y = Math.round(y0 * k); y <= Math.round(y1 * k); y++)
+      for (let x = Math.round(x0 * k); x <= Math.round(x1 * k); x++) mask[y * W + x] = true;
   };
   ell(28, 22, 21, 13); // body
   ell(47, 23, 11, 10); // head
   ell(56, 28, 5, 4); // snout
   ell(41, 13, 4, 5); // ear
-  box(13, 30, 18, 40); box(22, 31, 26, 41); box(36, 31, 40, 41); box(44, 30, 48, 40); // legs
+  box(13, 30, 18, 40); box(22, 31, 26, 41.5); box(36, 31, 40, 41.5); box(44, 30, 48, 40); // legs
   const ramp = ['#2e1c12', '#4a2e1c', '#6a4428', '#8e6038', '#b8844e'].map((x) => hex(x));
   const c = shadeMask(mask, W, H, ramp, hex('#140c08'), { bias: 0.05 });
+  const P = (x, y) => [Math.round(x * k), Math.round(y * k)];
   // dark mane along the spine with bristle spikes
   const mane = hex('#22140c'), maneHi = hex('#4a3020');
-  for (let x = 8; x < 44; x++) {
-    const top = Math.round(22 - Math.sqrt(Math.max(0, 1 - ((x - 28) / 21) ** 2)) * 13);
-    const len = 2 + ((x * 7) % 3);
-    for (let k = -len; k < 3; k++) c.set(x, top + k, k === -len ? hex('#140c08') : k < 0 && x % 2 ? maneHi : mane);
+  for (let x = Math.round(8 * k); x < Math.round(44 * k); x++) {
+    const ux = x / k;
+    const top = Math.round((22 - Math.sqrt(Math.max(0, 1 - ((ux - 28) / 21) ** 2)) * 13) * k);
+    const len = 2 + ((x * 7) % 4);
+    for (let j = -len; j < 4; j++) c.set(x, top + j, j === -len ? hex('#140c08') : j < 0 && x % 2 ? maneHi : mane);
   }
-  // hooves, snout tip, eye, tusks
-  for (const [x0] of [[13], [22], [36], [44]]) for (let x = x0; x < x0 + 5; x++) c.set(x, 40 + (x0 === 22 || x0 === 36 ? 1 : 0), hex('#1a1414'));
-  for (const [x, y] of [[59, 27], [59, 29], [60, 28]]) c.set(x, y, hex('#3a2018'));
-  c.set(50, 19, hex('#ff3020')); c.set(51, 19, hex('#ffe0a0')); c.set(50, 20, hex('#801010'));
-  for (const [x, y] of [[53, 31], [54, 30], [55, 29], [55, 28], [56, 27]]) c.set(x, y, hex('#f8f0d8'));
-  for (const [x, y] of [[53, 32], [54, 31]]) c.set(x, y, hex('#a89878'));
+  // hooves
+  for (const [x0, y0] of [[13, 40], [22, 41], [36, 41], [44, 40]]) {
+    const [hx, hy] = P(x0, y0);
+    for (let x = hx; x < hx + Math.round(6 * k); x++) c.set(x, hy, hex('#1a1414')), c.set(x, hy + 1, hex('#1a1414'));
+  }
+  // snout tip, eye, tusks
+  for (const [x, y] of [[59, 27], [59, 29], [60, 28]]) c.set(...P(x, y), hex('#3a2018'));
+  const [ex, ey] = P(50, 19);
+  c.set(ex, ey, hex('#ff3020')); c.set(ex + 1, ey, hex('#ffe0a0')); c.set(ex, ey + 1, hex('#801010')); c.set(ex + 1, ey + 1, hex('#ff3020'));
+  const tusk = [[53, 31.5], [54, 30.5], [55, 29.5], [55.5, 28.5], [56, 27.5], [56.5, 26.5]];
+  for (const [x, y] of tusk) { const [tx, ty] = P(x, y); c.set(tx, ty, hex('#f8f0d8')); c.set(tx, ty + 1, hex('#c8b898')); }
   return c;
 }
 

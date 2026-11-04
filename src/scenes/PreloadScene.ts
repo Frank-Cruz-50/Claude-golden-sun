@@ -40,8 +40,8 @@ export class PreloadScene extends Phaser.Scene {
     this.load.on('complete', () => label.destroy());
 
     for (const [path, url] of Object.entries(tilesetUrls)) this.load.image(tilesetTextureKey(fileName(path)), url);
-    // Character sheets: 16x24 frames, 3 per row (stand, stepA, stepB), rows down/left/right/up.
-    for (const [path, url] of Object.entries(spriteUrls)) this.load.spritesheet(fileName(path), url, { frameWidth: 16, frameHeight: 24 });
+    // Character sheets: 24x32 frames, 3 per row (stand, stepA, stepB), rows down/left/right/up.
+    for (const [path, url] of Object.entries(spriteUrls)) this.load.spritesheet(fileName(path), url, { frameWidth: 24, frameHeight: 32 });
     for (const [id, entry] of Object.entries(maps)) {
       const url = mapUrls[`../../assets/maps/${entry.file}`];
       if (!url) throw new Error(`maps.json: file not found for "${id}": ${entry.file}`);
