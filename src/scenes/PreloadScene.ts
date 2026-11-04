@@ -1,17 +1,27 @@
 import Phaser from 'phaser';
-import { GAME_HEIGHT, GAME_WIDTH, mapCacheKey, SceneKeys, TextureKeys } from '../config';
+import { GAME_HEIGHT, GAME_WIDTH, mapCacheKey, SceneKeys, tilesetTextureKey } from '../config';
 import maps from '../data/maps.json';
 import strings from '../data/strings.json';
-import { generateObjectTextures } from '../ui/placeholderSprites';
+import { SHADOW_TEXTURE } from '../entities/GridCharacter';
+import { generateObjectTextures, generateShadowTexture } from '../ui/placeholderSprites';
 import { textStyle } from '../ui/textStyle';
-import tilesetUrl from '../../assets/tilesets/placeholder.png?url';
+
+const tilesetUrls = import.meta.glob('../../assets/tilesets/*.png', { query: '?url', import: 'default', eager: true }) as Record<
+  string,
+  string
+>;
+const spriteUrls = import.meta.glob('../../assets/sprites/*.png', { query: '?url', import: 'default', eager: true }) as Record<
+  string,
+  string
+>;
+const fileName = (path: string) => path.slice(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
 
 const mapUrls = import.meta.glob('../../assets/maps/*.tmj', { query: '?url', import: 'default', eager: true }) as Record<
   string,
   string
 >;
 
-/** Loads maps and tilesets. Characters and objects use code-drawn placeholders until M3. */
+/** Loads maps, tilesets, and character sheets. Chests/signs are still code-drawn placeholders. */
 export class PreloadScene extends Phaser.Scene {
   constructor() {
     super(SceneKeys.Preload);
@@ -29,7 +39,9 @@ export class PreloadScene extends Phaser.Scene {
     this.load.on('progress', (p: number) => (fill.width = (barWidth - 2) * p));
     this.load.on('complete', () => label.destroy());
 
-    this.load.image(TextureKeys.Tiles, tilesetUrl);
+    for (const [path, url] of Object.entries(tilesetUrls)) this.load.image(tilesetTextureKey(fileName(path)), url);
+    // Character sheets: 16x24 frames, 3 per row (stand, stepA, stepB), rows down/left/right/up.
+    for (const [path, url] of Object.entries(spriteUrls)) this.load.spritesheet(fileName(path), url, { frameWidth: 16, frameHeight: 24 });
     for (const [id, entry] of Object.entries(maps)) {
       const url = mapUrls[`../../assets/maps/${entry.file}`];
       if (!url) throw new Error(`maps.json: file not found for "${id}": ${entry.file}`);
@@ -39,6 +51,7 @@ export class PreloadScene extends Phaser.Scene {
 
   create(): void {
     generateObjectTextures(this);
+    generateShadowTexture(this, SHADOW_TEXTURE);
     this.scene.start(SceneKeys.Title);
   }
 }

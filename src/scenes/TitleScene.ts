@@ -43,8 +43,14 @@ export class TitleScene extends Phaser.Scene {
       this.leaving = true;
       this.cameras.main.fadeOut(300);
       this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, () =>
-        this.scene.start(SceneKeys.Field),
+        this.scene.start(SceneKeys.Field, devStartOverride()),
       );
     }
   }
+}
+
+/** Dev convenience: `?map=<id>&spawn=<name>` in the URL starts the field on that map. */
+function devStartOverride(): { map?: string; spawn?: string } {
+  const params = new URLSearchParams(window.location.search);
+  return { map: params.get('map') ?? undefined, spawn: params.get('spawn') ?? undefined };
 }

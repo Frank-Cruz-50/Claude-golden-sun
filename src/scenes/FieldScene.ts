@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { GAME_HEIGHT, GAME_WIDTH, mapCacheKey, SceneKeys, TextureKeys, TILE_SIZE, TILESET_NAME } from '../config';
+import { GAME_HEIGHT, GAME_WIDTH, mapCacheKey, SceneKeys, TextureKeys, TILE_SIZE, tilesetTextureKey } from '../config';
 import dialogueData from '../data/dialogue.json';
 import fieldConfig from '../data/field.json';
 import itemsData from '../data/items.json';
@@ -68,9 +68,13 @@ export class FieldScene extends Phaser.Scene {
 
     const tilemap = this.make.tilemap({ key: mapCacheKey(this.mapId) });
     this.tiled = this.cache.tilemap.get(mapCacheKey(this.mapId)).data as TiledMap;
-    const tileset = tilemap.addTilesetImage(TILESET_NAME, TextureKeys.Tiles)!;
-    tilemap.createLayer('ground', tileset, 0, 0)?.setDepth(-1);
-    tilemap.createLayer('above', tileset, 0, 0)?.setDepth(100000);
+    const tilesets = this.tiled.tilesets.map((ts) => {
+      const added = tilemap.addTilesetImage(ts.name, tilesetTextureKey(ts.name));
+      if (!added) throw new Error(`Map "${this.mapId}": tileset "${ts.name}" has no matching PNG in assets/tilesets`);
+      return added;
+    });
+    tilemap.createLayer('ground', tilesets, 0, 0)?.setDepth(-1);
+    tilemap.createLayer('above', tilesets, 0, 0)?.setDepth(100000);
     this.collision = buildCollisionGrid(this.tiled);
 
     const objects = parseFieldObjects(this.tiled);
@@ -100,7 +104,8 @@ export class FieldScene extends Phaser.Scene {
       }
     }
 
-    this.player = new GridCharacter(this, fieldConfig.player.color, spawn.x, spawn.y, spawn.facing);
+    const look = fieldConfig.player.sprite ? { sheet: fieldConfig.player.sprite } : { color: fieldConfig.player.color };
+    this.player = new GridCharacter(this, look, spawn.x, spawn.y, spawn.facing);
     this.setupCamera();
     this.cameras.main.fadeIn(FADE_MS);
   }

@@ -1,5 +1,5 @@
 {
-  "tobin": { "name": "Tobin", "color": "#3a8a8a", "dialogue": "brindlewick.tobin", "facing": "down", "wander": 0 },
+  "tobin": { "name": "Tobin", "sprite": "tobin", "color": "#3a8a8a", "dialogue": "brindlewick.tobin", "facing": "down", "wander": 0 },
   "jun": { "name": "Jun", "color": "#c8503a", "dialogue": "brindlewick.jun", "facing": "left", "wander": 2 },
   "miller": { "name": "Miller Oaks", "color": "#8a7a5a", "dialogue": "brindlewick.miller", "facing": "down", "wander": 1 },
   "beekeeper": { "name": "Old Bettany", "color": "#d8b040", "dialogue": "brindlewick.beekeeper", "facing": "right", "wander": 0 },

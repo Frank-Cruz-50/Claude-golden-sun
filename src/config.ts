@@ -12,13 +12,12 @@ export const SceneKeys = {
 } as const;
 
 export const TextureKeys = {
-  Tiles: 'tiles-placeholder',
   ChestClosed: 'placeholder-chest-closed',
   ChestOpen: 'placeholder-chest-open',
   Sign: 'placeholder-sign',
 } as const;
 
-/** Name of the tileset inside the .tmj files. */
-export const TILESET_NAME = 'placeholder';
+/** Texture key for a tileset, by the tileset's name inside .tmj files (= its PNG file name). */
+export const tilesetTextureKey = (name: string) => `tileset:${name}`;
 
 export const mapCacheKey = (mapId: string) => `map:${mapId}`;

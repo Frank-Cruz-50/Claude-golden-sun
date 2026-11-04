@@ -15,6 +15,13 @@ const rawMaps = import.meta.glob('../assets/maps/*.tmj', { query: '?raw', import
   string
 >;
 
+const tilesetFiles = Object.keys(import.meta.glob('../assets/tilesets/*.png')).map((p) =>
+  p.slice(p.lastIndexOf('/') + 1, -'.png'.length),
+);
+const spriteFiles = Object.keys(import.meta.glob('../assets/sprites/*.png')).map((p) =>
+  p.slice(p.lastIndexOf('/') + 1, -'.png'.length),
+);
+
 const loaded = Object.fromEntries(
   Object.entries(maps).map(([id, entry]) => {
     const raw = rawMaps[`../assets/maps/${entry.file}`];
@@ -28,10 +35,10 @@ describe.each(Object.keys(loaded))('map %s', (id) => {
   const { map, objects } = loaded[id];
   const grid = buildCollisionGrid(map);
 
-  it('uses the placeholder tileset and 16px tiles', () => {
+  it('uses 16px tiles from tilesets that exist in assets/tilesets', () => {
     expect(map.tilewidth).toBe(16);
     expect(map.tileheight).toBe(16);
-    expect(map.tilesets.map((t) => t.name)).toContain('placeholder');
+    for (const ts of map.tilesets) expect(tilesetFiles, `tileset ${ts.name}`).toContain(ts.name);
   });
 
   it('places every spawn and warp on a walkable tile', () => {
@@ -52,8 +59,9 @@ describe.each(Object.keys(loaded))('map %s', (id) => {
   it('references NPCs, dialogue, and items that exist', () => {
     for (const o of objects) {
       if (o.kind === 'npc') {
-        const def = (npcs as Record<string, { dialogue: string }>)[o.npc];
+        const def = (npcs as Record<string, { dialogue: string; sprite?: string }>)[o.npc];
         expect(def, `npc ${o.npc}`).toBeDefined();
+        if (def.sprite) expect(spriteFiles, `sprite ${def.sprite}`).toContain(def.sprite);
         expect(dialogue, `dialogue ${def.dialogue}`).toHaveProperty([def.dialogue]);
       }
       if (o.kind === 'sign') expect(dialogue).toHaveProperty([o.dialogue]);
@@ -68,6 +76,10 @@ describe.each(Object.keys(loaded))('map %s', (id) => {
 });
 
 describe('field config', () => {
+  it('uses a player sprite that exists', () => {
+    expect(spriteFiles).toContain(field.player.sprite);
+  });
+
   it('starts on an existing map and spawn', () => {
     const start = loaded[field.startMap];
     expect(start).toBeDefined();

@@ -4,6 +4,8 @@ import { GridCharacter } from './GridCharacter';
 
 export interface NpcDef {
   name: string;
+  /** Sprite sheet key (file name in /assets/sprites); falls back to `color` placeholder art. */
+  sprite?: string;
   color: string;
   dialogue: string;
   facing: string;
@@ -25,7 +27,7 @@ export class NPC extends GridCharacter {
     tileX: number,
     tileY: number,
   ) {
-    super(scene, def.color, tileX, tileY, isDirection(def.facing) ? def.facing : 'down');
+    super(scene, def.sprite ? { sheet: def.sprite } : { color: def.color }, tileX, tileY, isDirection(def.facing) ? def.facing : 'down');
     this.homeX = tileX;
     this.homeY = tileY;
     this.scheduleWander(scene.time.now);

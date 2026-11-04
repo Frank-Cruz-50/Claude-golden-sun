@@ -1,4 +1,11 @@
 {
-  "brindlewick": { "file": "brindlewick.tmj" },
-  "brindlewick_cottage": { "file": "brindlewick_cottage.tmj" }
+  "brindlewick": {
+    "file": "brindlewick.tmj"
+  },
+  "brindlewick_cottage": {
+    "file": "brindlewick_cottage.tmj"
+  },
+  "art_demo": {
+    "file": "art_demo.tmj"
+  }
 }
