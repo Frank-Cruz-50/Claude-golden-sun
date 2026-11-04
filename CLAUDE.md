@@ -1,4 +1,4 @@
-# Project: GBA-Style JRPG — Part 1 (working title: TBD)
+# Project: Spiritbound — GBA-Style JRPG, Part 1
 
 A top-down, turn-based JRPG in the spirit of Golden Sun (GBA, 2001): elemental magic,
 elemental spirits that boost stats, change classes, and power summons, and light

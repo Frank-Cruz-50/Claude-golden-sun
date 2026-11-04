@@ -4,7 +4,7 @@
 
 - **Totals:** 12 story bosses + 4 optional bosses = 16 spirit-dropping bosses.
 - **Spirits:** 18 total, because two major bosses drop 2 each.
-- **Also:** 1 scripted duel (Cassius), which drops no spirit.
+- **Also:** the Cassius duels (3 linked fights, Acts 3–4), which drop no spirits.
 - **Levels:** recommended levels assume the ~10h XP curve, tuned in M15.
 - **Spirit details:** see [spirits.md](spirits.md).
 
@@ -21,13 +21,14 @@
 | 7 | The Stone Ogres | 2 | Trollgate Woods | Earth | Story | 13 | Cobble (Earth) |
 | 8 | The Mask of Tides | 2 | Brightwash Ford | Water | Story | 15 | Drizzle (Water) |
 | 9 | Skarn, the Mountain's Wrath | 3 | Frostcrown Pass | Water | Story | 17 | Floe (Water) |
+| — | *Cassius: Duel 1 + "The Grip"* | 3 | Shelter Below the Pass | Fire (Gripped) | Story duel | 17 | *none* |
 | 10 | The Mere Lurker | 3 | Gate of Orvanthal | Shadow | Story | 18 | Gloam (Shadow) |
 | 11 | The Hollow Seraph | 3 | The Silent Halls | Light | **Optional** (Ithra) | 20 | Gleam (Light) |
 | 12 | Gorrak Blacktusk & the Cave Brute | 3 | Hall of Records | Earth | Story | 20 | Quarry (Earth) |
 | 13 | **Uldraeth, the Furnace Below** | 3 | The Chasm Bridge | Fire | Story, **major** | 22 | Bellows (Fire) **+** Vigil (Light) |
 | 14 | The Mirror Warden | 4 | The Heartmere | Light | **Optional** (needs Ithra) | 24 | Halo (Light) |
 | 15 | Hagra the Pyre-Witch | 4 | The Teeth | Fire | Story | 25 | Brand (Fire) |
-| — | *Cassius (duel)* | 4 | Hollow Hill | Fire | Scripted | — | *none* |
+| — | *Cassius rematch (1v1)* | 4 | Hollow Hill | Fire → Fire/Shadow | Story duel | 26 | *none (grants the Lamplighter's Legacy)* |
 | 16 | **The Crowned Mask** | 4 | Hollow Hill | Wind | Story, **major / finale** | 28 | Tempest (Wind) **+** Wisp (Wind) |
 
 ### Element check (3 spirits per element)
@@ -168,41 +169,57 @@ This is the hardest fight so far and a set piece.
 - **Moves:** totems that buff her each turn they stand.
 - **Phases:** **Phase 2:** *Pyre* **telegraph**.
 
-### — Cassius duel(s) (Fire) — Act 4: **format awaiting Frank's decision**
+### — The Cassius duels (no spirit drops) — Acts 3 and 4
 
-**Story context.** Cassius has been on the river for days with the Nightglass whispering to him every
-night. It promises him the power to save Halvard alone.
+The Cassius story is three linked fights. None of them drops a spirit (no spirit lives in him), so
+they don't count toward the 16 spirit bosses.
 
-At Hollow Hill the company stops to argue: east toward Duskreach, or south to Halvard? Cassius
-finds Wren alone gathering firewood. He begins gently: "Lend it to me, just until Halvard is safe."
-Then he begs. When Wren refuses, the stone's grip takes him, and he draws his sword on the friend he
-swore to protect.
+#### Duel 1, "The Whisper" — Act 3, Shelter Below the Pass (Wren solo, **unwinnable**)
 
-That moment is the "betrayal" the act is built around. Whatever happens in the fight, it ends with
-Wren fleeing and Cassius alone, horrified at what he just did. Minutes later the Iron Brood attack.
+- **Setup:** after the failed Frostcrown Pass, the stone's grip takes Cassius and he attacks Wren alone at the edge of camp.
+- **The fight:** Cassius is far stronger. His hits are huge, and Wren's damage barely scratches him.
+- **Ending:** it ends when Wren drops to 25% HP or after 4 rounds. Maelis's lantern floods the clearing, and the cutscene leads straight into the group fight.
+- **Purpose:** shows what the Nightglass does to good people.
 
-**Option A: one scripted duel (the current draft).**
-- **Setup:** Wren alone vs. Cassius at full strength.
-- **Ending:** after 3 rounds, or when Wren hits 50% HP, the cutscene takes over.
-- **Rewards:** no rewards and no game over. It's pure drama.
+#### Group fight, "The Grip" — Act 3, Shelter Below the Pass (full party + Maelis, **losable**)
 
-**Option B: two duels (recommended).**
-1. **Duel 1, "The Whisper" (unwinnable).** Wren alone vs. a stone-empowered Cassius.
-   - His hits are huge, and Wren's damage barely scratches him.
-   - It ends when Wren drops to 25% HP or after 4 rounds. Wren clutches the stone, it flares, and Wren escapes.
-   - This teaches the player what the Nightglass does to people.
-2. **Duel 2, "The Debt" (a real fight). There are two places it could go:**
-   - **B1, later the same night (Part 1):**
-     - During the breaking, Cassius stumbles back into the battle with the stone's grip still on him. He's half-raving and attacks anyone near Wren.
-     - The active party of 4 must **defeat him to break the hold**. He's tough, with a real chance of a game over.
-     - Once he's beaten he comes to his senses, and the cutscene of him defending Jun follows.
-     - **Rewards:** no spirit drop (no spirit lives in him), but it gives his redemption a gameplay moment.
-   - **B2, in Part 2 (normal ending only):**
-     - The rematch is Cassius as **the Eighth Mask**, a full boss.
-     - In the true-ending timeline he's an ally, so that fight never happens.
-     - This is a strong reason for players to replay for the true ending.
+- **Setup:** Maelis plus the active party against "Gripped" Cassius.
+  - Maelis is **locked into the active party** for this fight.
+  - Wren starts at his duel HP.
+- **Grip gauge:** the fight ends when the gauge hits 0, not when his HP does.
+  - Normal hits lower it a little.
+  - **Light hits do double**, and Cassius takes double damage from Light.
+- **Maelis's unique command, Unbind:** a massive cut to the Grip gauge with a 2-turn cooldown. This is her moment to shine.
+- **Phases:**
+  - **Phase 1:** heavy Fire attacks, aimed at the weakest party members.
+  - **Phase 2 (Grip below 50%):** *Halvard's Fury* **telegraph**, a huge hit on the whole party. Maelis's Sanctuary or Defend blunts it.
+- **Losing:** a party wipe is a game over. The game retries from the camp before the Shelter.
+- **Recommended level:** 17.
 
-B1 and B2 can both be used: the real duel in Part 1, and the masked rematch in Part 2's normal-ending path.
+#### The rematch, "The Lamplighter's Heir" — Act 4, Hollow Hill (Wren vs. Cassius 1v1, **losable**, two phases)
+
+- **Setup:** after Maelis's death, the grip takes Cassius again. There's nobody to save either of them this time.
+- **Phase 1:** Earth Wren vs. Fire Cassius. A straight, hard duel where Cassius has the edge in raw power.
+  - *Brandstrike* **telegraph**: a big hit. Wren can Defend to halve it.
+- **Transition (at 50% of Cassius's HP):**
+  - Cassius drives the stolen **Veilborn shard-splinter** into his sword hand. His fire turns black.
+  - The dark lantern-staff ignites in Wren's hands, and Vigil speaks: "She asked me to keep watch over you."
+  - **The Lamplighter's Legacy awakens.**
+- **Phase 2:** both get a boost.
+  - **Cassius becomes Shadowflame Cassius** (Fire + Shadow):
+    - Higher ATK.
+    - Life-draining black-fire attacks.
+    - *Ashen Oath* **telegraph**, a near-lethal hit.
+  - **Wren gains the full Legacy:**
+    - Permanent stat jump.
+    - Lantern Flare and Kindly Light.
+    - Lamplighter's Staff equipped.
+    - Wren's Light hits Shadowflame Cassius for 1.5x, the same edge Maelis had over him in Act 3.
+  - Light and Shadow both hit each other for 1.5x, so Phase 2 is a fast, swingy duel with high stakes on both sides.
+- **Losing:** game over. The game retries from the Hollow Hill camp, just before the duel.
+- **Rewards:** no spirit. The Legacy is the reward, and it is permanent.
+- **Recommended level:** 26.
+- **Part 2 seed:** the shard has marked Cassius. In the normal ending, it's how the Crowned Mask finds and claims him as the Eighth Mask. A future Part 2 rematch against the Eighth Mask can follow the normal-ending path.
 
 ### 16. The Crowned Mask (Wind) — Act 4 finale, Part 1 final boss
 
@@ -216,6 +233,5 @@ B1 and B2 can both be used: the real duel in Part 1, and the masked rematch in P
 
 ## Open questions for Frank
 
-1. **Cassius duel format:** A, B with B1, B with B2, or B with both? (see above)
-2. **Stone Ogres "survive till dawn" win:** keep it, or make it a straight fight?
-3. **Ogre names:** are "Grub" and "Mudge" too goofy for the tone?
+1. **Stone Ogres "survive till dawn" win:** keep it, or make it a straight fight?
+2. **Ogre names:** are "Grub" and "Mudge" too goofy for the tone?

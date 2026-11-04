@@ -1,7 +1,7 @@
-# Story Bible — Part 1
+# Spiritbound — Story Bible (Part 1)
 
 > **Status: DRAFT, waiting for Frank's approval.** Nothing in this file gets built until it's approved.
-> Working title ideas are at the bottom.
+> **Title: *Spiritbound*** (approved).
 
 ## Premise (one paragraph)
 
@@ -112,13 +112,13 @@ Carrying it there is the goal of the whole saga. Part 1 ends long before they ar
    - **(Optional)** **Vesk**, a jittery informant, begs for help: they deserted the Hushed and the spymaster wants them dead. **Optional boss: Spymaster Quell (Shadow)** → Vesk joins.
 2. **The Fenlow Marshes.** A miserable bog route with insect swarms. Camping, banter, and Corvin's backstory.
 3. **Watchfire Hill.** They camp in a ruined beacon tower. Five Veilborn attack at night. **Boss: the Mask of Embers (Fire).**
-   - The mask stabs Wren with a shard-blade before it is driven off. Wren is **wounded**: the cold spreads toward his heart.
+   - The mask stabs Wren with a shard-blade before it is driven off. A splinter of the blade stays in the wound. Wren is **wounded**: the cold spreads toward his heart.
    - *(Wren is locked out of the party; Tobin leads, and Wren is carried on a litter.)*
 4. **Trollgate Woods.** A shortcut through a wood of hulking stone ogres. **Boss: the Stone Ogres (Earth, twin fight).** They turn to stone at dawn: survive or win.
 5. **The Brightwash Ford.** A Thessari envoy, **Sorrel**, meets them and races them to the river ford with the Veilborn behind. **Boss: the Mask of Tides (Water)** at the ford.
    - Mid-fight, the Thessari call up the river. The flood (a telegraphed attack that hits both sides) washes the hunters away.
 6. **Velmara.** The sanctuary city.
-   - Wren wakes up healed. *(Wren is unlocked.)*
+   - Wren wakes up healed. The Thessari healers drew out the **Veilborn shard-splinter**. It can't be destroyed here, so Maelis takes it to unmake at the Dusk Furnace along with the Nightglass. *(Wren is unlocked.)*
    - Maelis is here; she escaped imprisonment in the White Spire.
    - **The Council of Lamps:**
      - Maelis reveals Archmage Veyron's betrayal.
@@ -133,16 +133,24 @@ Carrying it there is the goal of the whole saga. Part 1 ends long before they ar
 
 1. **The Ashvale Ruins.** The company travels south along the mountains. Flocks of carrion kites spy for the enemy, and an optional detour avoids them.
 2. **Frostcrown Pass.** They try to cross the mountains. A blizzard rises as if the mountain itself rejects them. **Boss: Skarn, the Mountain's Wrath (Water/ice).** Even after the win, the pass is buried. They turn back.
-3. **The Gate of Orvanthal.** Bruna leads them to her people's lost door. A riddle-door puzzle is **required and simple**. Something rises from the black lake. **Boss: the Mere Lurker (Shadow).** The door slams behind them, and the only way is through.
-4. **Orvanthal, the Hollow Halls.** A multi-floor dungeon with **camps** between floors.
+3. **The Shelter Below the Pass: Cassius's first fall.** The company is frozen, beaten, and arguing. Bruna wants to go under the mountain through Orvanthal. Cassius wants to turn south toward Halvard.
+   - That night Cassius finds Wren alone at the edge of camp. He asks, then begs, then the stone's grip takes him and he draws on Wren.
+   - **Duel 1, "The Whisper" (Wren solo, unwinnable).**
+   - Wren is about to fall when Maelis's lantern floods the clearing with light and the whole company arrives.
+   - **Group fight, "The Grip" (full party, losable).** Maelis is the saving grace: the stone's hold makes Cassius **weak to her Light**, and only she can break it.
+   - Once he's beaten, Cassius collapses, horrified. Maelis tells the others: "The stone found the best man here and used his love as a handle. Keep him close." She stays at Cassius's side from then on.
+   - *(Cassius is locked out from Duel 1 through the group fight, then rejoins.)*
+4. **The Gate of Orvanthal.** Bruna leads them to her people's lost door. A riddle-door puzzle is **required and simple**. Something rises from the black lake. **Boss: the Mere Lurker (Shadow).** The door slams behind them, and the only way is through.
+5. **Orvanthal, the Hollow Halls.** A multi-floor dungeon with **camps** between floors.
    - The party finds **the Delver's Chain**, a Korrim relic that grants **field ability Grasp**.
    - **(Optional) The Silent Halls:** a side wing where **Ithra Sael** is trapped. She is guarding the bodies of her lost expedition. **Optional boss: the Hollow Seraph (Light)**, a fallen star-guardian. → Ithra joins.
-5. **The Hall of Records.** Bruna finds the tomb of her lost king and his journal ("They woke it. We could not put it back to sleep."). War drums sound. **Boss: Gorrak Blacktusk & the Cave Brute (Earth).**
-6. **The Chasm Bridge.** The ancient terror wakes. **Boss: Uldraeth, the Furnace Below (Fire, multi-phase).**
+6. **The Hall of Records.** Bruna finds the tomb of her lost king and his journal ("They woke it. We could not put it back to sleep."). War drums sound. **Boss: Gorrak Blacktusk & the Cave Brute (Earth).**
+7. **The Chasm Bridge.** The ancient terror wakes. **Boss: Uldraeth, the Furnace Below (Fire, multi-phase).**
    - When its last phase begins, Maelis steps onto the bridge alone, breaks it, and falls into the dark with the beast. *(Maelis is removed from the roster for Part 1. Her equipment returns to the bag.)*
    - **Uldraeth drops 2 spirits:** *Bellows* (Fire), and **Vigil** (Light), born from Maelis's last light.
-   - **The Lamplighter's Legacy:** Wren picks up Maelis's lantern-staff from the bridge's edge. Her light passes to him (details in [characters.md](characters.md)), so losing the strongest party member makes the protagonist stronger.
-7. **Daylight.** The company comes out onto a hillside. A grief scene: no music, then each character reacts.
+   - **The dark lantern:** Wren picks up Maelis's lantern-staff from the bridge's edge. It won't light for him... yet. *(The Lamplighter's Legacy awakens in Act 4. See the Cassius rematch below.)*
+   - Unnoticed, Cassius takes the **Veilborn shard-splinter** from Maelis's fallen pack. In his grief he tells himself he's keeping it safe.
+8. **Daylight.** The company comes out onto a hillside. A grief scene: no music, then each character reacts. Cassius takes it hardest: the one person who could pull him back from the stone is gone.
 
 ## Act 4: The Golden Wood & the River (~2.5h)
 
@@ -153,15 +161,23 @@ Carrying it there is the goal of the whole saga. Part 1 ends long before they ar
    - **(Optional) Trial of the Heartmere:** if Ithra is in the party, Amaranth offers a trial. **Optional boss: the Mirror Warden (Light).**
    - Parting gifts: boats, travel cloaks (**encounter-reducing equipment**), and rope.
 2. **The Veyra River.** Boat travel between landing points. Iron Brood raiders shadow them along the banks.
-   - Cassius is quieter each day. The Nightglass is whispering to him.
+   - Cassius is quieter each day. The Nightglass is whispering to him again, and the shard-splinter in his pack whispers back.
+   - In Aurwyn, Warden Amaranth tells Wren about the dark lantern: "Her light is waiting for the moment you need it most." 
 3. **The Teeth.** At a portage around the rapids, an Iron Brood war-band springs an ambush. **Boss: Hagra the Pyre-Witch (Fire).**
 4. **The Twin Wardens.** The boats pass two colossal statues of ancient kings. This is a non-interactive scenic moment that hints at Corvin's heritage.
 5. **Hollow Hill.** The company camps to decide its route.
-   - **Cassius's fall:** alone with Wren, Cassius begs, then tries to take the Nightglass. **Duel vs Cassius (Fire).** No spirit drop. *The duel format is still open: see [bosses.md](bosses.md).* Wren flees.
+   - **Cassius's second fall.** With no Maelis to pull him back, the grip takes Cassius fully. He finds Wren alone: "She saved me once. Nobody's coming this time."
+   - **The rematch, "The Lamplighter's Heir" (Wren vs. Cassius, 1v1, losable, two phases):**
+     - **Phase 1:** Wren as he is, Earth only, against Cassius's Fire. It's hard, and Cassius is stronger.
+     - **The turn:** Cassius drives the stolen **Veilborn shard-splinter** into his own sword hand. His flames turn black.
+     - At the same moment, Maelis's lantern-staff finally ignites in Wren's hands. **The Lamplighter's Legacy awakens.**
+     - **Phase 2:** both are transformed. Cassius gains **Shadowflame** (Fire + Shadow). Wren gains **Maelis's Light**, which is strong against Shadow, the same edge she had against him in Act 3. It's an even, dramatic finish.
+     - **Afterwards:** Cassius is beaten and comes back to himself, sobbing. The shard has marked him, though, and something in the east has felt it.
+   - Details are in [bosses.md](bosses.md).
    - **The breaking:** the Iron Brood attack in force, led by the warlord **Skarrak**. The party fights a series of wave battles.
    - Drawn by the stone, the **Crowned Mask** descends. **Final boss: the Crowned Mask (Wind, drops 2).**
    - **The aftermath:**
-     - Cassius returns, ashamed, and fights to defend Jun, but both are overwhelmed. Skarrak's brood carry Jun off. Cassius is dragged away, alive.
+     - Cassius, ashamed, fights to defend Jun, but both are overwhelmed. Skarrak's brood carry Jun off. Cassius is dragged away alive; the Crowned Mask can sense the shard in his hand.
      - Wren understands that the stone will tear any company apart. He takes a boat to cross the river alone. Tobin wades in after him and won't be left behind.
      - Corvin, Bruna (and Ithra, Isolde, and Vesk if recruited) choose to hunt for Jun.
 
@@ -217,8 +233,9 @@ The aftermath at Hollow Hill plays out as written above.
 | Act 1 throughout | Wren is **locked in** (always in the active party) for the whole game except while wounded |
 | Act 2 Watchfire Hill → Velmara | Wren is **locked out** (wounded); Tobin is locked in as leader |
 | Act 2 Velmara | Maelis, Bruna, Cassius join |
-| Act 3 Chasm Bridge | Maelis is **permanently removed** for Part 1 (her equipment and spirits return to the bag). Wren gains the **Lamplighter's Legacy** |
-| Act 4 Hollow Hill | Cassius is **locked out** before the duel; at the ending the party scatters |
+| Act 3 Shelter Below the Pass | Cassius is **locked out** (enemy) for Duel 1 and the group fight, then rejoins |
+| Act 3 Chasm Bridge | Maelis is **permanently removed** for Part 1 (her equipment and spirits return to the bag). Wren receives the dark lantern-staff (key item) |
+| Act 4 Hollow Hill | Cassius is **locked out** (enemy) for the rematch. Wren gains the **Lamplighter's Legacy** mid-duel. At the ending the party scatters |
 
 ## Field abilities (story-granted)
 
@@ -237,10 +254,6 @@ The aftermath at Hollow Hill plays out as written above.
 - Normal ending: Cassius as the eighth Veilborn. True ending: Hesper as the enemy's prisoner.
 - Jun's captivity (normal ending only).
 
-## Working title ideas
+## Title
 
-1. *The Nightglass*
-2. *Six Lanterns*
-3. *The Unlit Crown*
-4. *Spiritbound*
-5. *Wending: The Shard and the Seven*
+***Spiritbound*** (approved by Frank).

@@ -92,6 +92,7 @@ Region: the Frostcrown and Orvanthal. Party level ~15–23.
 | `ow_frostcrown` | Frostcrown foothills (overworld) | Overworld | Med | — | — | — | 5m |
 | `ashvale_ruins` | Ashvale Ruins | Route | Med | O ×2 (Gust fog, Push) | — | C | 20m |
 | `frostcrown_pass` | Frostcrown Pass | Dungeon | High | — | Skarn | C | 30m |
+| `frostcrown_shelter` | Shelter Below the Pass | Scene + duels | None | — | Cassius Duel 1 → "The Grip" | C | 15m |
 | `orvanthal_gate` | Gate of Orvanthal | Dungeon (small) | Low | **R ×1** (riddle door) | Mere Lurker | S (before the point of no return) | 15m |
 | `orvanthal_upper` | Upper Halls | Dungeon | Med | **R ×1** (Grasp lever) + O ×2 | — | C | 30m |
 | `orvanthal_silent` | The Silent Halls | Dungeon (side) | High | O ×2 (Grasp, Gust) | *Hollow Seraph (opt)* | — | 25m (opt) |
@@ -115,7 +116,7 @@ Region: Aurwyn and the Veyra River. Party level ~23–28.
 | `reedbank_landing` | Reedbank Landing | Route | Med | O ×1 (Grasp) | — | C | 15m |
 | `the_teeth` | The Teeth (portage) | Dungeon | High | **R ×1** (Grasp rope) | Hagra | C | 25m |
 | `twin_wardens` | The Twin Wardens | Scene | None | — | — | — | 5m |
-| `hollow_hill` | Hollow Hill | Dungeon (finale) | Waves | — | Cassius duel → **Crowned Mask** | C | 30m |
+| `hollow_hill` | Hollow Hill | Dungeon (finale) | Waves | — | Cassius rematch (1v1) → **Crowned Mask** | C | 30m |
 | `far_shore` | The Far Shore | Scene (ending) | None | — | — | — | 5m |
 
 **Required puzzles: 1.** River travel is a cutscene-style scrolling screen between landings, not free sailing.
@@ -128,9 +129,9 @@ Region: Aurwyn and the Veyra River. Party level ~23–28.
 |-----|------------|------------------|-------|
 | 1 | ~1h40m | ~20m | ~2h |
 | 2 | ~2h10m | ~20m | ~2.5h |
-| 3 | ~2h35m | ~25m | ~3h |
+| 3 | ~2h50m | ~25m | ~3h15m |
 | 4 | ~2h15m | ~15m | ~2.5h |
-| **Total** | **~8h40m** | **~1h20m** | **~10h** |
+| **Total** | **~8h55m** | **~1h20m** | **~10h15m** |
 
 ## Town services summary
 

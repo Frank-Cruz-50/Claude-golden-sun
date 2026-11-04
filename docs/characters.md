@@ -33,7 +33,7 @@
 - **Recruited:** the protagonist (story, from the start). **Locked in** except while wounded in Act 2.
 - **Who:** an apprentice mapmaker in Brindlewick. He was raised by his aunt Hesper after his parents drowned in a river flood. He has drawn maps of places he never expected to visit.
 - **Personality:** careful, observant, quietly funny. Hates being the centre of attention.
-- **Arc:** wants a small, safe life → inherits Maelis's light when she falls (the Lamplighter's Legacy, see #7) → learns the burden can't be handed off → *chooses* to carry it alone at the end of Part 1, and finds out he can't really be alone (Tobin).
+- **Arc:** wants a small, safe life → loses his mentor → her light awakens in him during the rematch against Cassius (the Lamplighter's Legacy, see #7) → learns the burden can't be handed off → *chooses* to carry it alone at the end of Part 1, and finds out he can't really be alone (Tobin).
 - **Sample abilities:** Stonecall (Earth damage), Mend Soil (light heal), Bulwark (DEF up on self).
 - **Nightglass pull:** offers him a world where nothing ever changes and nobody he loves leaves.
 
@@ -118,17 +118,28 @@
   - In the Act 1 tutorial she carries the first fight on her own.
 - **Sample abilities:** Lantern Flare (heavy Light damage to all), Sanctuary (party DEF and resistance up), Kindly Light (full revive), Dawnbreak (her signature: huge Light damage, extra vs. Shadow).
 
-### The Lamplighter's Legacy (what Wren gains when she falls)
+### The Lamplighter's Legacy (what Wren gains after she falls)
 
-At the Chasm Bridge, Wren takes up her lantern-staff and her light passes to him:
+- **Act 3, Chasm Bridge:** Wren takes up her lantern-staff. It stays **dark**, carried as a key item.
+- **Act 4, the Cassius rematch:** the staff ignites at the start of Phase 2, and her light passes to Wren for good.
 
-- **Lamplighter's Staff:** a unique weapon that Wren alone can equip, the best weapon available in Act 3.
+From then on, Wren has:
+
+- **Lamplighter's Staff:** a unique weapon that Wren alone can equip, the best weapon available in Act 4.
 - **A permanent stat jump:** about +15% PP and ATK, and Wren's growth rates rise for the rest of Part 1.
 - **Inherited spells:** Wren learns **Lantern Flare** and **Kindly Light**, usable in any class. They stay Light-element even though Wren is Earth.
 - **A new class tier:** Wren's class line gets a final **"Lantern"** tier, reachable only after the Legacy.
 - **Vigil:** the spirit defaults to Wren on the acquisition screen (the player can move it).
 
-**Design intent:** the hole Maelis leaves is real, but the player's grief turns straight into momentum. Wren steps up and becomes the strongest member going into Act 4.
+**Design intent:** the hole Maelis leaves is real. The player feels it through most of Act 4, and then grief turns into momentum in the rematch. Wren goes into the finale as the strongest member.
+
+### Maelis vs. Cassius
+
+In the Act 3 group fight against the stone-gripped Cassius, Maelis is the hero:
+- Cassius takes **double damage from her Light**.
+- She has a unique command, **Unbind**, that breaks the stone's hold.
+
+This sets up the rematch, where Wren inherits exactly that edge.
 
 ## 8. Bruna Ironvein: the Shield of the Korrim
 
@@ -150,13 +161,15 @@ At the Chasm Bridge, Wren takes up her lantern-staff and her light passes to him
 - **Stats:** HP 4, PP 2, ATK 5, DEF 4, AGI 1.
 - **Age:** 30. **Pronouns:** he/him.
 - **Recruited:** Act 2, Velmara council (story).
-  - Act 4: **locked out** before the betrayal duel.
-  - Ending: captured. He is the eighth Veilborn cliffhanger.
+  - Act 3, Shelter Below the Pass: becomes an **enemy** (Duel 1 + group fight), then rejoins.
+  - Act 4, Hollow Hill: becomes an **enemy** again (the rematch).
+  - Ending: captured (normal ending, where he's the eighth Veilborn cliffhanger) or saved (true ending).
 - **Who:** the eldest son of the Steward of Halvard, a fortress-city that has bled for a century holding back Duskreach. A brilliant, beloved soldier.
 - **Personality:** charismatic, generous, protective. Cannot stand helplessness.
-- **Arc:** a good man who wants to save his people → the stone feeds on that love → tries to take it → repents and defends Jun → is taken.
+- **Arc:** a good man who wants to save his people → the stone feeds on that love → attacks Wren and is saved by Maelis (Act 3) → loses her and takes the Veilborn shard in grief → falls again and fights Wren alone (Act 4) → repents and defends Jun → is taken, or saved in the true ending.
 - **Sample abilities:** Brandstrike (Fire damage, slow), War Cry (party ATK up), Last Stand (stronger at low HP).
 - **Nightglass pull:** offers him the power to save Halvard alone.
+- **Enemy forms:** "Gripped" Cassius (Act 3, weak to Light) and Shadowflame Cassius (Act 4 rematch, Phase 2, Fire + Shadow).
 
 ## 10. Ithra Sael: the Starborn Archer *(optional)*
 
