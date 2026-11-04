@@ -1,6 +1,6 @@
 # Elemental Spirits — the 18 of Part 1
 
-> **Status: DRAFT, waiting for Frank's approval.**
+> **Status: APPROVED by Frank (M1).** Changes from here on need Frank's sign-off.
 > The numbers are first-pass placeholders; they get balanced in M7 and M15.
 
 ## Rules recap

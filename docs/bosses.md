@@ -1,6 +1,6 @@
 # Bosses — Part 1
 
-> **Status: DRAFT, waiting for Frank's approval.**
+> **Status: APPROVED by Frank (M1).** Changes from here on need Frank's sign-off.
 
 - **Totals:** 12 story bosses + 4 optional bosses = 16 spirit-dropping bosses.
 - **Spirits:** 18 total, because two major bosses drop 2 each.
@@ -231,7 +231,7 @@ they don't count toward the 16 spirit bosses.
 
 ---
 
-## Open questions for Frank
+## Decisions (approved by Frank)
 
-1. **Stone Ogres "survive till dawn" win:** keep it, or make it a straight fight?
-2. **Ogre names:** are "Grub" and "Mudge" too goofy for the tone?
+1. **Stone Ogres:** keep them as written: Grub and Mudge, twin fight, and the "survive until dawn" win.
+2. **Cassius:** the three-fight arc above.

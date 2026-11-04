@@ -1,6 +1,6 @@
 # Characters — the 10 recruitable party members
 
-> **Status: DRAFT, waiting for Frank's approval.**
+> **Status: APPROVED by Frank (M1).** Changes from here on need Frank's sign-off.
 > The stat leans and sample abilities show intent only. Exact numbers go in /src/data when M5 and M6 are built.
 
 ## Roster at a glance

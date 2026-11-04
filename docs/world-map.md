@@ -1,6 +1,6 @@
 # World Map & Act-by-Act Map List — Part 1
 
-> **Status: DRAFT, waiting for Frank's approval.**
+> **Status: APPROVED by Frank (M1).** Changes from here on need Frank's sign-off.
 > Times are first-play estimates that include battles and story. The target is about 10h total.
 
 ## Overworld

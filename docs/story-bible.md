@@ -1,6 +1,6 @@
 # Spiritbound — Story Bible (Part 1)
 
-> **Status: DRAFT, waiting for Frank's approval.** Nothing in this file gets built until it's approved.
+> **Status: APPROVED by Frank (M1).** Changes from here on need Frank's sign-off.
 > **Title: *Spiritbound*** (approved).
 
 ## Premise (one paragraph)
