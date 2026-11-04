@@ -1,5 +1,6 @@
 // Tobin Marsh — curly blond hair, teal tunic, cook's apron, frying pan on his back.
 import { mirror, overlay } from './sprite.mjs';
+import { pan, stamp } from './weapons.mjs';
 import { FRONT_HALF, LEGS_FRONT, LEGS_SIDE, SIDE, withDetails } from './wren.mjs';
 
 export const MATERIALS = {
@@ -12,6 +13,7 @@ export const MATERIALS = {
   p: ['#3a2614', '#56381e', '#76502c', '#98703e'], // brown trousers
   b: ['#2a160c', '#4a2a16', '#6e4222', '#946036'],
   f: ['#1a1a20', '#2e2e38', '#4a4a58', '#7a7a8a'], // frying pan (iron)
+  g: ['#5a3c0a', '#9a7016', '#d8aa2c', '#fff0a0'],
 };
 export const DETAILS = {
   k: '#1a1018', i: '#2a5ab0', w: '#ffffff', m: '#b8604a',
@@ -130,8 +132,20 @@ export function frame(view, legs) {
   if (view === 'front') {
     let rows = withDetails([...mirror(FRONT), ...LEGS_FRONT[legs]], FRONT_DETAILS);
     for (const { y, row } of APRON) rows = overlay(rows, [row], y);
-    return rows;
+    // pan on his back: the handle pokes up over his left shoulder
+    return stamp(rows, [[19, 15, 'l'], [20, 14, 'l'], [20, 13, 'l'], [21, 12, 'l'], [21, 11, 'g']], 'behind');
   }
   if (view === 'back') return clip(withDetails([...mirror(BACK), ...LEGS_FRONT[legs]], BACK_DETAILS));
-  return withDetails([...SIDE_ROWS, ...LEGS_SIDE[legs]], SIDE_DETAILS);
+  if (view === 'battle') return battleFrame();
+  const rows = withDetails([...SIDE_ROWS, ...LEGS_SIDE[legs]], SIDE_DETAILS);
+  return stamp(rows, pan(18, 22, 3, 16, 15), 'behind');
+}
+
+/** 32x32 battle stance facing left, pan raised to swing. */
+export function battleFrame() {
+  const pad = (rows) => rows.map((r) => '........' + r);
+  let rows = pad(withDetails([...SIDE_ROWS, ...LEGS_SIDE.stepB], SIDE_DETAILS));
+  const arm = [[15, 21, 't'], [14, 20, 't'], [13, 20, 't'], [15, 22, 't'], [14, 21, 't'], [12, 19, 's'], [12, 20, 's'], [11, 19, 's']];
+  rows = stamp(rows, arm, 'front');
+  return stamp(rows, pan(5, 10, 4, 11, 18), 'front');
 }

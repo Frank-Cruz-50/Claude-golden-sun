@@ -16,3 +16,8 @@ export function buildSheet(def) {
   );
   return sheet;
 }
+
+/** 32x32 battle-stance frame (facing left). */
+export function buildBattleFrame(def) {
+  return renderSprite(def.frame('battle'), def.MATERIALS, def.DETAILS);
+}

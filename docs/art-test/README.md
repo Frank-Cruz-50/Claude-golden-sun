@@ -4,7 +4,7 @@ Custom, code-drawn art in a GBA JRPG style. **Nothing here is final until Frank 
 
 | File | What it shows |
 |------|---------------|
-| `characters.png` | Wren and Tobin sheets close up: 24x32, 4 directions x 3 walk frames |
+| `characters.png` | Wren and Tobin sheets close up: 24x32, 4 directions x 3 walk frames, plus battle stances with weapons drawn |
 | `field-ingame.png` | The real game running the `art_demo` map: open `http://localhost:5173/?map=art_demo` and press Start |
 | `field-composite.png` | The same area rendered offline by the art scripts |
 | `battle-mockup.png` | **Static mock-up** of a side-view battle (no battle code exists yet; that is M4) |

@@ -1,5 +1,6 @@
 // Wren Ashby — 24x32 field sprite drafts.
 import { mirror, overlay, renderSprite } from './sprite.mjs';
+import { stamp, sword } from './weapons.mjs';
 
 export const MATERIALS = {
   h: ['#3a1c0c', '#6a3818', '#9a5826', '#c8843c'], // hair
@@ -9,6 +10,9 @@ export const MATERIALS = {
   l: ['#3a2010', '#5e3a1e', '#86562e', '#ae7a48'], // leather
   p: ['#2a2238', '#3e3454', '#5a4e74', '#7a6e96'], // trousers
   b: ['#2a160c', '#4a2a16', '#6e4222', '#946036'], // boots
+  e: ['#3a4250', '#6a7488', '#a8b2c4', '#eef4fc'], // steel blade
+  v: ['#4a2a12', '#7a4a20', '#a86e32', '#d09a54'], // scabbard (light tan leather)
+  g: ['#5a3c0a', '#9a7016', '#d8aa2c', '#fff0a0'], // brass guard / pommel
 };
 export const DETAILS = {
   k: '#1a1018', // lash / pupil
@@ -212,7 +216,26 @@ const BACK_DETAILS = [
 ];
 
 export function frame(view, legs) {
-  if (view === 'front') return withDetails([...mirror(FRONT_HALF), ...LEGS_FRONT[legs]], FRONT_DETAILS);
-  if (view === 'back') return withDetails([...mirror(BACK_HALF), ...LEGS_FRONT[legs]], BACK_DETAILS);
-  return withDetails([...SIDE, ...LEGS_SIDE[legs]], SIDE_DETAILS);
+  if (view === 'front') {
+    const rows = withDetails([...mirror(FRONT_HALF), ...LEGS_FRONT[legs]], FRONT_DETAILS);
+    return stamp(rows, sword(22, 7, 4, 29), 'behind');
+  }
+  if (view === 'back') {
+    const rows = withDetails([...mirror(BACK_HALF), ...LEGS_FRONT[legs]], BACK_DETAILS);
+    return stamp(rows, sword(1, 7, 19, 29), 'front');
+  }
+  if (view === 'battle') return battleFrame();
+  const rows = withDetails([...SIDE, ...LEGS_SIDE[legs]], SIDE_DETAILS);
+  return stamp(rows, sword(20, 7, 18, 30, { thick: false }), 'behind');
+}
+
+/** 32x32 side-view battle stance facing left, sword drawn and held forward. */
+export function battleFrame() {
+  const pad = (rows) => rows.map((r) => '........' + r);
+  let rows = pad(withDetails([...SIDE, ...LEGS_SIDE.stepB], SIDE_DETAILS));
+  // clear the hanging arm, then draw it reaching forward
+  rows = stamp(rows, [[18, 23, 't'], [19, 23, 't'], [20, 25, 't'], [21, 25, 't'], [19, 25, 't'], [20, 26, 't']], 'front');
+  const arm = [[15, 21, 't'], [14, 21, 't'], [13, 21, 't'], [15, 22, 't'], [14, 22, 't'], [13, 22, 't'], [12, 22, 's'], [11, 22, 's'], [12, 21, 's']];
+  rows = stamp(rows, arm, 'front');
+  return stamp(rows, sword(12, 23, 1, 10, { sheathed: false }), 'front');
 }
