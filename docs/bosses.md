@@ -41,8 +41,13 @@
 | Shadow | Murk, Gloam, Hush | Hush is optional |
 | Light | Vigil, Gleam, Halo | Gleam and Halo are optional |
 
-**Story-only player:** gets 14 spirits. Doing every optional boss gives the full 18, so Light tier-2 and
-tier-3 summons are rewards for optional content. *(Flagged as a question below.)*
+**Story-only player:** gets 14 spirits. Doing every optional boss gives the full 18.
+
+**Approved:** all 18 are required for the **true ending**, where everyone is saved. See the Endings section of
+[story-bible.md](story-bible.md).
+
+The Act 1–2 optional bosses (Bog Matron, Spymaster Quell) become unreachable after the Gate of
+Orvanthal, so the game warns the player before that point of no return.
 
 ---
 
@@ -163,11 +168,41 @@ This is the hardest fight so far and a set piece.
 - **Moves:** totems that buff her each turn they stand.
 - **Phases:** **Phase 2:** *Pyre* **telegraph**.
 
-### — Cassius, scripted duel (Fire) — Act 4
+### — Cassius duel(s) (Fire) — Act 4: **format awaiting Frank's decision**
 
-- **Setup:** Wren alone vs. Cassius.
-- **Ending:** after 3 rounds, or when either side's HP hits 50%, the cutscene takes over.
-- **Rewards:** no rewards and no game over.
+**Story context.** Cassius has been on the river for days with the Nightglass whispering to him every
+night. It promises him the power to save Halvard alone.
+
+At Hollow Hill the company stops to argue: east toward Duskreach, or south to Halvard? Cassius
+finds Wren alone gathering firewood. He begins gently: "Lend it to me, just until Halvard is safe."
+Then he begs. When Wren refuses, the stone's grip takes him, and he draws his sword on the friend he
+swore to protect.
+
+That moment is the "betrayal" the act is built around. Whatever happens in the fight, it ends with
+Wren fleeing and Cassius alone, horrified at what he just did. Minutes later the Iron Brood attack.
+
+**Option A: one scripted duel (the current draft).**
+- **Setup:** Wren alone vs. Cassius at full strength.
+- **Ending:** after 3 rounds, or when Wren hits 50% HP, the cutscene takes over.
+- **Rewards:** no rewards and no game over. It's pure drama.
+
+**Option B: two duels (recommended).**
+1. **Duel 1, "The Whisper" (unwinnable).** Wren alone vs. a stone-empowered Cassius.
+   - His hits are huge, and Wren's damage barely scratches him.
+   - It ends when Wren drops to 25% HP or after 4 rounds. Wren clutches the stone, it flares, and Wren escapes.
+   - This teaches the player what the Nightglass does to people.
+2. **Duel 2, "The Debt" (a real fight). There are two places it could go:**
+   - **B1, later the same night (Part 1):**
+     - During the breaking, Cassius stumbles back into the battle with the stone's grip still on him. He's half-raving and attacks anyone near Wren.
+     - The active party of 4 must **defeat him to break the hold**. He's tough, with a real chance of a game over.
+     - Once he's beaten he comes to his senses, and the cutscene of him defending Jun follows.
+     - **Rewards:** no spirit drop (no spirit lives in him), but it gives his redemption a gameplay moment.
+   - **B2, in Part 2 (normal ending only):**
+     - The rematch is Cassius as **the Eighth Mask**, a full boss.
+     - In the true-ending timeline he's an ally, so that fight never happens.
+     - This is a strong reason for players to replay for the true ending.
+
+B1 and B2 can both be used: the real duel in Part 1, and the masked rematch in Part 2's normal-ending path.
 
 ### 16. The Crowned Mask (Wind) — Act 4 finale, Part 1 final boss
 
@@ -181,7 +216,6 @@ This is the hardest fight so far and a set piece.
 
 ## Open questions for Frank
 
-1. **Optional Light spirits:** two of the three Light spirits (and one Water, one Shadow) are behind optional bosses. Is that OK, or should every element have all 3 spirits on the story path?
+1. **Cassius duel format:** A, B with B1, B with B2, or B with both? (see above)
 2. **Stone Ogres "survive till dawn" win:** keep it, or make it a straight fight?
-3. **Cassius duel:** keep it unlosable, or make it a real (winnable/losable) fight with no spirit drop?
-4. **Ogre names:** are "Grub" and "Mudge" too goofy for the tone?
+3. **Ogre names:** are "Grub" and "Mudge" too goofy for the tone?

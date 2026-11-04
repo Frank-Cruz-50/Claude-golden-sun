@@ -13,7 +13,7 @@
 | 4 | **Isolde Fenwick** | Water | Hexer: status effects and debuffs | Act 1, the Sedgewood | **Optional** |
 | 5 | **Corvin Hale** | Wind | Ranger swordsman, physical all-rounder | Act 2, Harrow's Rest | Story |
 | 6 | **Vesk** | Shadow | Rogue: speed, steals, poison | Act 2, Harrow's Rest | **Optional** |
-| 7 | **Maelis the Lamplighter** | Light | Mage: offensive and support magic, high PP | Act 1 guest; joins Act 2 | Story |
+| 7 | **Maelis the Lamplighter** | Light | Battle-mage, **strongest member** until lost | Act 1 guest; joins Act 2 | Story |
 | 8 | **Bruna Ironvein** | Earth | Tank / guardian | Act 2, Velmara | Story |
 | 9 | **Lord Cassius Varr** | Fire | Heavy warrior: slow, huge hits | Act 2, Velmara | Story |
 | 10 | **Ithra Sael** | Wind | Archer: multi-target, very fast | Act 3, Orvanthal | **Optional** |
@@ -33,7 +33,7 @@
 - **Recruited:** the protagonist (story, from the start). **Locked in** except while wounded in Act 2.
 - **Who:** an apprentice mapmaker in Brindlewick. He was raised by his aunt Hesper after his parents drowned in a river flood. He has drawn maps of places he never expected to visit.
 - **Personality:** careful, observant, quietly funny. Hates being the centre of attention.
-- **Arc:** wants a small, safe life → learns the burden can't be handed off → *chooses* to carry it alone at the end of Part 1, and finds out he can't really be alone (Tobin).
+- **Arc:** wants a small, safe life → inherits Maelis's light when she falls (the Lamplighter's Legacy, see #7) → learns the burden can't be handed off → *chooses* to carry it alone at the end of Part 1, and finds out he can't really be alone (Tobin).
 - **Sample abilities:** Stonecall (Earth damage), Mend Soil (light heal), Bulwark (DEF up on self).
 - **Nightglass pull:** offers him a world where nothing ever changes and nobody he loves leaves.
 
@@ -101,8 +101,8 @@
 ## 7. Maelis the Lamplighter: the Mentor
 
 - **Element:** Light.
-- **Role:** mage. Strong offensive and support magic, and the highest PP in the roster.
-- **Stats:** HP 2, PP 5, ATK 2, DEF 2, AGI 3.
+- **Role:** battle-mage and **the strongest party member by a clear margin** until she falls. Players should come to lean on her.
+- **Stats:** HP 4, PP 5, ATK 4, DEF 4, AGI 4. She is the only character above 3 in every stat.
 - **Age:** looks 60 and is much older. **Pronouns:** she/her.
 - **Recruited:**
   - Act 1 prologue: a guest (locked in, then leaves).
@@ -110,9 +110,25 @@
   - Act 3: **lost** at the Chasm Bridge. Her equipment and any held spirits return to the bag.
 - **Who:** a wandering sage who lights the lamps of forgotten shrines. One of the few still alive who saw the Unlit King fall. An old friend of Hesper's.
 - **Personality:** grandmotherly, mischievous, terrifying when angry. Loves bad puns and lights candles that don't need lighting.
-- **Arc:** guides from the shadows → sacrifices herself so the company can live. Her last light becomes the spirit **Vigil**.
-- **Sample abilities:** Lantern Flare (Light damage to all), Sanctuary (party DEF and resistance up), Kindly Light (revive).
-- **Design note:** she's deliberately strong. Players should feel her loss in battle, not just in the story.
+- **Arc:** guides from the shadows → sacrifices herself so the company can live. Her last light becomes the spirit **Vigil**, and her power passes to Wren.
+- **How she stays the standout:**
+  - She always joins (or rejoins) **3 levels above** the party's average.
+  - She has the best growth rates in the roster.
+  - She has unique abilities nobody else learns.
+  - In the Act 1 tutorial she carries the first fight on her own.
+- **Sample abilities:** Lantern Flare (heavy Light damage to all), Sanctuary (party DEF and resistance up), Kindly Light (full revive), Dawnbreak (her signature: huge Light damage, extra vs. Shadow).
+
+### The Lamplighter's Legacy (what Wren gains when she falls)
+
+At the Chasm Bridge, Wren takes up her lantern-staff and her light passes to him:
+
+- **Lamplighter's Staff:** a unique weapon that Wren alone can equip, the best weapon available in Act 3.
+- **A permanent stat jump:** about +15% PP and ATK, and Wren's growth rates rise for the rest of Part 1.
+- **Inherited spells:** Wren learns **Lantern Flare** and **Kindly Light**, usable in any class. They stay Light-element even though Wren is Earth.
+- **A new class tier:** Wren's class line gets a final **"Lantern"** tier, reachable only after the Legacy.
+- **Vigil:** the spirit defaults to Wren on the acquisition screen (the player can move it).
+
+**Design intent:** the hole Maelis leaves is real, but the player's grief turns straight into momentum. Wren steps up and becomes the strongest member going into Act 4.
 
 ## 8. Bruna Ironvein: the Shield of the Korrim
 

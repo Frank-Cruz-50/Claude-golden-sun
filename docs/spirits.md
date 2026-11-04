@@ -6,6 +6,7 @@
 ## Rules recap
 
 - **Source:** spirits drop **only from bosses**. See [bosses.md](bosses.md).
+- **True ending:** requires all 18. The Spirits menu shows "Spirits freed: X / 18".
 - **Set:** the holder gets the stat bonus, and the spirit counts toward their class.
 - **Unleash** (in battle, from Set): a one-time effect. The spirit then moves to **Standby**.
 - **Summon:** uses 1, 2, or 3 Standby spirits of an element. Those spirits go to **Recovery** and return to Set after N turns (draft: N = tier + 1).

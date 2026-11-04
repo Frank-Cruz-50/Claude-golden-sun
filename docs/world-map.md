@@ -92,7 +92,7 @@ Region: the Frostcrown and Orvanthal. Party level ~15–23.
 | `ow_frostcrown` | Frostcrown foothills (overworld) | Overworld | Med | — | — | — | 5m |
 | `ashvale_ruins` | Ashvale Ruins | Route | Med | O ×2 (Gust fog, Push) | — | C | 20m |
 | `frostcrown_pass` | Frostcrown Pass | Dungeon | High | — | Skarn | C | 30m |
-| `orvanthal_gate` | Gate of Orvanthal | Dungeon (small) | Low | **R ×1** (riddle door) | Mere Lurker | — | 15m |
+| `orvanthal_gate` | Gate of Orvanthal | Dungeon (small) | Low | **R ×1** (riddle door) | Mere Lurker | S (before the point of no return) | 15m |
 | `orvanthal_upper` | Upper Halls | Dungeon | Med | **R ×1** (Grasp lever) + O ×2 | — | C | 30m |
 | `orvanthal_silent` | The Silent Halls | Dungeon (side) | High | O ×2 (Grasp, Gust) | *Hollow Seraph (opt)* | — | 25m (opt) |
 | `orvanthal_deep` | Deep Halls | Dungeon | High | O ×1 | — | C | 25m |
@@ -142,8 +142,9 @@ Region: Aurwyn and the Veyra River. Party level ~23–28.
 | Velmara | Items, weapons, armor, Thessari specialty | ✓ | ✓ | Ithra quest start |
 | Aurwyn | Items, weapons, armor, cloaks | ✓ | ✓ | Last full town in Part 1 |
 
-## Open questions for Frank
+## Decisions (approved by Frank)
 
-1. **One continuous overworld or a region map per act?** Continuous is closer to Golden Sun but costs more map work. Region-per-act is cheaper.
-2. **River travel:** a non-interactive scrolling cutscene between landings, as proposed, or a simple steerable boat?
-3. **Return trips:** should the player be able to walk back to earlier regions once they've left? Proposed: yes until Act 3 (the Orvanthal door seals behind them), and then no.
+1. **Overworld:** one continuous overworld map (Golden Sun style).
+2. **River travel:** a non-interactive scrolling cutscene between landings.
+3. **Return trips:** free backtracking to earlier regions until the Gate of Orvanthal seals in Act 3, then no return.
+   - Before the gate, Bruna warns the party, and the menu reminds the player of any unbeaten Act 1–2 optional bosses, because all 18 spirits are needed for the true ending.

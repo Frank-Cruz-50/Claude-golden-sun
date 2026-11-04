@@ -141,6 +141,7 @@ Carrying it there is the goal of the whole saga. Part 1 ends long before they ar
 6. **The Chasm Bridge.** The ancient terror wakes. **Boss: Uldraeth, the Furnace Below (Fire, multi-phase).**
    - When its last phase begins, Maelis steps onto the bridge alone, breaks it, and falls into the dark with the beast. *(Maelis is removed from the roster for Part 1. Her equipment returns to the bag.)*
    - **Uldraeth drops 2 spirits:** *Bellows* (Fire), and **Vigil** (Light), born from Maelis's last light.
+   - **The Lamplighter's Legacy:** Wren picks up Maelis's lantern-staff from the bridge's edge. Her light passes to him (details in [characters.md](characters.md)), so losing the strongest party member makes the protagonist stronger.
 7. **Daylight.** The company comes out onto a hillside. A grief scene: no music, then each character reacts.
 
 ## Act 4: The Golden Wood & the River (~2.5h)
@@ -156,7 +157,7 @@ Carrying it there is the goal of the whole saga. Part 1 ends long before they ar
 3. **The Teeth.** At a portage around the rapids, an Iron Brood war-band springs an ambush. **Boss: Hagra the Pyre-Witch (Fire).**
 4. **The Twin Wardens.** The boats pass two colossal statues of ancient kings. This is a non-interactive scenic moment that hints at Corvin's heritage.
 5. **Hollow Hill.** The company camps to decide its route.
-   - **Cassius's fall:** alone with Wren, Cassius begs, then tries to take the Nightglass. **Scripted duel vs Cassius (Fire).** No spirit drop; you can't truly win or lose it. Wren flees.
+   - **Cassius's fall:** alone with Wren, Cassius begs, then tries to take the Nightglass. **Duel vs Cassius (Fire).** No spirit drop. *The duel format is still open: see [bosses.md](bosses.md).* Wren flees.
    - **The breaking:** the Iron Brood attack in force, led by the warlord **Skarrak**. The party fights a series of wave battles.
    - Drawn by the stone, the **Crowned Mask** descends. **Final boss: the Crowned Mask (Wind, drops 2).**
    - **The aftermath:**
@@ -164,13 +165,47 @@ Carrying it there is the goal of the whole saga. Part 1 ends long before they ar
      - Wren understands that the stone will tear any company apart. He takes a boat to cross the river alone. Tobin wades in after him and won't be left behind.
      - Corvin, Bruna (and Ithra, Isolde, and Vesk if recruited) choose to hunt for Jun.
 
-## Ending: the cliffhanger
+## Endings
 
-1. On the far shore, Wren and Tobin look east toward Duskreach.
-2. **Cutaway: the Ashen Throne.** The Crowned Mask places an **eighth porcelain mask** before a chained Cassius.
+There are two endings. Which one the player gets depends on how many spirits they've freed by the final battle.
+
+| Ending | Requirement |
+|--------|-------------|
+| **Normal ending** | Fewer than 18 spirits (a story-only run has 14) |
+| **True ending** | **All 18 spirits**, which means beating all 4 optional bosses |
+
+### Normal ending: "The Breaking"
+
+The aftermath at Hollow Hill plays out as written above.
+
+1. **Jun is carried off** by Skarrak's brood. **Cassius is dragged away** alive.
+2. On the far shore, Wren and Tobin look east toward Duskreach.
+3. **Cutaway: the Ashen Throne.** The Crowned Mask places an **eighth porcelain mask** before a chained Cassius.
    *"Seven were never enough."*
-3. **Final beat:** that night, the Nightglass whispers Wren's name for the first time. It speaks in **Aunt Hesper's voice**.
-4. **TO BE CONTINUED.**
+4. **Final beat:** that night, the Nightglass whispers Wren's name for the first time. It speaks in **Aunt Hesper's voice**.
+5. **TO BE CONTINUED.**
+
+### True ending: "The Eighteen"
+
+1. **The Eighteen answer.** As the Brood overwhelm Cassius and Jun, all 18 freed spirits rise from the party at once. This is the first time anyone has seen every spirit together since the Unlit King fell.
+   - They give Wren a one-time command, **Concord**, which shields the whole company.
+2. **Everyone is saved.**
+   - Jun is pulled back from the Brood.
+   - Cassius is torn free of the stone's grip before he can be taken. He lives, redeemed and broken, and goes with Corvin's group to pay his debt.
+3. **The company still splits.** Wren still leaves with Tobin, by choice this time, to keep the stone away from the people he just saved. That makes it a goodbye instead of a rout.
+4. **Cutaway: the Ashen Throne.** The eighth mask is set before an **empty chain**.
+   *"Then we take the one who carried it first."*
+   The camera pans to a hooded prisoner wearing Hesper's iron locket chain: **Aunt Hesper is alive and in the enemy's hands.**
+5. **Final beat:** the Nightglass whispers Wren's name in Hesper's voice. Now the player knows why.
+6. **TO BE CONTINUED.**
+
+### How the true ending is signposted (so it's fair)
+
+- **Foreshadowing:** at the Council of Lamps, Maelis says that the spirits "remember each other", and that all of them together could do something nobody has seen in an age.
+- **Spirit tracker:** the Spirits menu shows **Spirits freed: X / 18** from the first boss on.
+- **Optional-boss hints:** each optional boss has an NPC hint in the nearest town.
+- **Point-of-no-return warning:** before the Gate of Orvanthal (Act 3), where earlier regions are cut off, Bruna warns the party. If any Act 1–2 optional boss hasn't been beaten, the menu shows a reminder: "Spirits still sleep in the west."
+- **Carry-over:** Part 2 will read which ending was reached from the Part 1 clear save.
 
 ---
 
@@ -182,7 +217,7 @@ Carrying it there is the goal of the whole saga. Part 1 ends long before they ar
 | Act 1 throughout | Wren is **locked in** (always in the active party) for the whole game except while wounded |
 | Act 2 Watchfire Hill → Velmara | Wren is **locked out** (wounded); Tobin is locked in as leader |
 | Act 2 Velmara | Maelis, Bruna, Cassius join |
-| Act 3 Chasm Bridge | Maelis is **permanently removed** for Part 1 (her equipment and spirits return to the bag) |
+| Act 3 Chasm Bridge | Maelis is **permanently removed** for Part 1 (her equipment and spirits return to the bag). Wren gains the **Lamplighter's Legacy** |
 | Act 4 Hollow Hill | Cassius is **locked out** before the duel; at the ending the party scatters |
 
 ## Field abilities (story-granted)
@@ -199,7 +234,8 @@ Carrying it there is the goal of the whole saga. Part 1 ends long before they ar
 - Corvin's lineage (the Twin Wardens) and the drowned kingdom he won't talk about.
 - Archmage Veyron and the White Spire.
 - Did Maelis really die?
-- Cassius as the eighth Veilborn.
+- Normal ending: Cassius as the eighth Veilborn. True ending: Hesper as the enemy's prisoner.
+- Jun's captivity (normal ending only).
 
 ## Working title ideas
 
