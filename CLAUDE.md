@@ -19,7 +19,7 @@ any Golden Sun / Nintendo / Camelot names or assets.
 - **Elements:** 6.
 - **Spirits:** obtained **only by defeating bosses**.
 - **Field puzzles:** nice-to-have, light, never a hard progression gate except for a few simple ones.
-- **Art:** free asset packs chosen by Claude (see Assets).
+- **Art:** custom pixel art drawn by Claude in code (`tools/art/`), GBA JRPG style. Free packs only for enemies, music, and sound if needed (see Art).
 
 ---
 
@@ -42,8 +42,9 @@ any Golden Sun / Nintendo / Camelot names or assets.
   /ui          text box, menus, HP/PP bars, cursor, portraits
   /data        JSON only: characters, classes, abilities, spirits, summons, enemies,
                bosses, items, equipment, encounters, shops, dialogue, quests, maps index
+/tools/art     art generators (Node built-ins only): node tools/art/build.mjs regenerates /assets
 /assets
-  /raw         untouched downloaded packs
+  /raw         untouched downloaded packs (enemies/audio only, if used)
   /sprites /tilesets /maps /ui /audio
   CREDITS.md   every asset: source URL, author, license
 /tests
@@ -52,7 +53,7 @@ any Golden Sun / Nintendo / Camelot names or assets.
 ## Rules for Claude Code
 1. **Data-driven.** All stats, abilities, enemies, items, dialogue, and quests live in /data JSON. No hardcoded content.
 2. **Every milestone must be playable.** Run `npm run dev` and verify before moving on.
-3. **Placeholder art until M3.** After that, use real assets from the chosen packs.
+3. **Art comes from `tools/art/`.** Never hand-edit generated PNGs; change the generator and rebuild. Code-drawn placeholders only until a real sprite exists.
 4. **Pure logic.** Battle, spirit, and class logic is plain TypeScript with no Phaser imports, and is unit tested.
 5. **Commit at the end of each milestone** with a short summary.
 6. **Ask before** adding dependencies beyond Phaser, Vite, TypeScript, and Vitest.
@@ -96,7 +97,7 @@ Earth, Fire, Water, Wind, Light, Shadow (or original names).
 ## Battle
 - Turn-based. Choose actions for all 4 party members, then everyone acts by Agility order (with slight randomness).
 - Actions: Attack, Ability (PP), Spirit, Summon, Item, Defend, Swap, Flee (no fleeing from bosses).
-- Front-view layout: enemies in the center, party HP/PP bars at the bottom.
+- Side-view layout (classic GBA side view): enemies on the left, party on the right in 32x32 battle stances with weapons drawn, command window and party HP/PP window along the bottom.
 - Random encounters use a step counter with a per-map rate. Add an item/ability that reduces encounters.
 - Bosses get multi-phase patterns and telegraphed big attacks.
 
@@ -122,7 +123,7 @@ Equipment, Status/Class, Quests, Save, Options
 - **M0 Scaffold:** Vite + Phaser + TS, scaled canvas, scene flow Boot → Title → Field
 - **M1 Docs:** story bible, 10 characters, 18 spirits, boss list, act-by-act map list → **Frank approves**
 - **M2 Field:** Tiled map, movement, collision, camera, transitions, NPCs, dialogue, chests
-- **M3 Assets:** pick free packs, write CREDITS.md, swap out placeholders → **Frank approves look**
+- **M3 Assets:** custom art in the locked style (tiles, characters, props, UI font), redraw Brindlewick, update CREDITS.md → **Frank approves look**
 - **M4 Battle core:** encounters, turn order, basic actions, XP/leveling, victory/defeat
 - **M5 Party system:** 10-character roster, active/bench, recruitment, swap in battle
 - **M6 Abilities, items, equipment, shops, inn**
@@ -136,9 +137,28 @@ Equipment, Status/Class, Quests, Save, Options
 
 ---
 
-## Assets (free packs, Claude picks)
-- **Licenses:** prefer CC0. Accept CC-BY, and packs whose terms allow free commercial use with credit. **Verify the license on the actual download page** and log it in /assets/CREDITS.md. Avoid CC-BY-SA, GPL, and "non-commercial only" unless Frank approves.
-- **Consistency matters more than quality.** Pick ONE main family for tiles and characters at the same scale (16x16 tiles, ~16x24 to 24x32 characters, top-down 3/4 view, RPG Maker/GBA style). Only mix packs if their palettes and scale match.
-- Separate packs are fine for battle enemies, UI, sound effects, and music.
-- If Claude Code can't download a pack directly, give Frank a list (pack name, URL, license, what it covers) and he'll drop the zips into /assets/raw.
-- Specs: tiles 16x16; field characters 4 directions with 3-4 walk frames; battle party 32-48px; enemies 32-96px; portraits 32-48px; PNG with transparency, no anti-aliasing.
+## Art (locked by Frank after the M3 art test)
+- **Style:** GBA JRPG. A lush 3/4 top-down field like the GBA classics; side-view battles. Reference mock-ups live in `docs/art-test/`.
+- **Everything is original.** Match the *style* of the reference games; never trace or copy their sprites.
+- **Pipeline:** characters use the material-map renderer (`tools/art/sprite.mjs`):
+  - Draw flat materials (hair, skin, cloth, leather, ...).
+  - The renderer adds 4-tone shading lit from the top-left, coloured selective outlines, and shadow lines where materials overlap.
+  - Hand-placed details go on top: eyes, buckles, hair strands, highlights.
+- **Sizes:**
+
+  | Asset | Size |
+  |-------|------|
+  | Tiles | 16x16 |
+  | Field characters | 24x32; 4 directions x 3 frames (stand, stepA, stepB) |
+  | Battle stances | 32x32, facing left |
+  | Enemies | 32-96px |
+  | Portraits | 32-48px |
+
+  All PNG with transparency, no anti-aliasing.
+- **Characters carry their weapon:** slung on the field (drawn behind the body so it peeks out), and drawn in battle (`tools/art/weapons.mjs`). Each character gets a distinct silhouette: hair, outfit, weapon.
+- **Palette:** warm and saturated. Every material has a 4-tone ramp.
+- **Text:** the custom pixel font in `tools/art/font.mjs`. UI windows are blue gradient with a light bevelled border.
+- **Packs (optional, enemies/music/SFX only):**
+  - Prefer CC0. Accept CC-BY, or terms that allow free commercial use with credit.
+  - **Verify the license on the actual download page.** Avoid CC-BY-SA, GPL, and non-commercial licenses unless Frank approves.
+  - Log every pack in `/assets/CREDITS.md`. If Claude can't download a pack, give Frank the name, URL, and license, and he drops the zip into `/assets/raw`.

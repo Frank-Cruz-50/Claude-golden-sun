@@ -1,6 +1,9 @@
 # M3 Asset Shortlist (draft)
 
-> **Status: RESEARCH DRAFT.** Licenses below come from search results, **not yet confirmed on the download
+> **Status: SUPERSEDED.** Frank chose custom art drawn by Claude (see CLAUDE.md → Art). Kept only for
+> reference in case packs are needed for enemies, music, or sound.
+>
+> **Original status: RESEARCH DRAFT.** Licenses below come from search results, **not yet confirmed on the download
 > pages**. This session's network blocks itch.io and opengameart.org. Every license must be read on the
 > actual page before anything goes into `/assets/raw` (CLAUDE.md rule).
 
