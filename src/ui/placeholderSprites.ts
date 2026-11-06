@@ -1,8 +1,7 @@
 import Phaser from 'phaser';
-import { TextureKeys, TILE_SIZE } from '../config';
 import type { Direction } from '../systems/field/direction';
 
-/** Code-drawn placeholder art. Replaced by real sprite sheets in M3. */
+/** Code-drawn fallbacks for characters without a sprite sheet yet, plus the drop shadow. */
 
 export const CHAR_W = 16;
 export const CHAR_H = 24;
@@ -46,29 +45,5 @@ export function generateShadowTexture(scene: Phaser.Scene, key: string): void {
   const g = scene.make.graphics({}, false);
   g.fillStyle(0x000000, 0.32).fillEllipse(7, 3, 14, 6);
   g.generateTexture(key, 14, 6);
-  g.destroy();
-}
-
-export function generateObjectTextures(scene: Phaser.Scene): void {
-  const g = scene.make.graphics({}, false);
-
-  g.fillStyle(0x7a4a22).fillRect(1, 4, 14, 11);
-  g.fillStyle(0x9a6a32).fillRect(1, 4, 14, 4);
-  g.fillStyle(0xe8c860).fillRect(1, 7, 14, 1).fillRect(7, 6, 2, 4);
-  g.generateTexture(TextureKeys.ChestClosed, TILE_SIZE, TILE_SIZE);
-  g.clear();
-
-  g.fillStyle(0x7a4a22).fillRect(1, 8, 14, 7);
-  g.fillStyle(0x3a2210).fillRect(2, 5, 12, 4);
-  g.fillStyle(0x9a6a32).fillRect(1, 1, 14, 4);
-  g.fillStyle(0xe8c860).fillRect(1, 8, 14, 1);
-  g.generateTexture(TextureKeys.ChestOpen, TILE_SIZE, TILE_SIZE);
-  g.clear();
-
-  g.fillStyle(0x6e4a2a).fillRect(7, 9, 2, 7);
-  g.fillStyle(0xb08050).fillRect(1, 2, 14, 8);
-  g.fillStyle(0x6e4a2a).fillRect(3, 4, 10, 1).fillRect(3, 7, 8, 1);
-  g.generateTexture(TextureKeys.Sign, TILE_SIZE, TILE_SIZE);
-
   g.destroy();
 }

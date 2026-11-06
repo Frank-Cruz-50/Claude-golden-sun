@@ -71,6 +71,10 @@ const G = {
   ',': ['..', '..', '..', '..', '..', '..', '.#', '#.'],
   ':': ['.', '.', '#', '.', '.', '.', '#'],
   "'": ['#', '#', '.', '.', '.', '.', '.'],
+  '"': ['#.#', '#.#', '...', '...', '...', '...', '...'],
+  ';': ['..', '..', '.#', '..', '..', '..', '.#', '#.'],
+  '&': ['.##..', '#..#.', '.##..', '.#..#', '#.##.', '#..#.', '.##.#'],
+  '*': ['.....', '#.#.#', '.###.', '#####', '.###.', '#.#.#', '.....'],
   '-': ['....', '....', '....', '####', '....', '....', '....'],
   '/': ['....#', '...#.', '...#.', '..#..', '.#...', '.#...', '#....'],
   '(': ['.#', '#.', '#.', '#.', '#.', '#.', '.#'],
@@ -116,4 +120,21 @@ export function buildFontSheet() {
     metrics[ch] = { x, y, w: glyph(ch)[0].length };
   });
   return { sheet, metrics };
+}
+
+/** BMFont XML for Phaser's bitmap font loader. */
+export function buildFontXml({ sheet, metrics }, file = 'font.png') {
+  const chars = Object.entries(metrics).map(
+    ([ch, m]) => `    <char id="${ch.codePointAt(0)}" x="${m.x}" y="${m.y}" width="${m.w}" height="${FONT_HEIGHT}" xoffset="0" yoffset="0" xadvance="${m.w + 1}" page="0" />`,
+  );
+  return `<?xml version="1.0"?>
+<font>
+  <info face="spiritbound" size="${FONT_HEIGHT}" />
+  <common lineHeight="${LINE_HEIGHT}" base="7" scaleW="${sheet.w}" scaleH="${sheet.h}" pages="1" />
+  <pages><page id="0" file="${file}" /></pages>
+  <chars count="${chars.length}">
+${chars.join('\n')}
+  </chars>
+</font>
+`;
 }

@@ -1,52 +1,46 @@
 import Phaser from 'phaser';
-import { GAME_HEIGHT, GAME_WIDTH } from '../config';
-import { textStyle } from './textStyle';
+import { GAME_HEIGHT, GAME_WIDTH, UiKeys } from '../config';
+import { addPixelText, LINE_HEIGHT, measurePixelText, TextColors } from './pixelText';
 
 const MARGIN = 4;
-const PADDING = 6;
+const PADDING_X = 8;
+const PADDING_Y = 6;
+const BOX_W = GAME_WIDTH - MARGIN * 2; // matches assets/ui/textbox.png
 const BOX_H = 50;
 export const TEXTBOX_LINES = 3;
 
-/** Bottom-of-screen dialogue box with an optional speaker tag. Placeholder look until M3. */
+/** Bottom-of-screen dialogue window with an optional speaker tag. */
 export class TextBox {
-  readonly maxChars: number;
+  readonly maxWidth = BOX_W - PADDING_X * 2;
   private readonly container: Phaser.GameObjects.Container;
-  private readonly body: Phaser.GameObjects.Text;
+  private readonly body: Phaser.GameObjects.BitmapText;
   private readonly nameTag: Phaser.GameObjects.Container;
-  private readonly nameText: Phaser.GameObjects.Text;
-  private readonly nameBg: Phaser.GameObjects.Rectangle;
-  private readonly arrow: Phaser.GameObjects.Text;
+  private readonly nameText: Phaser.GameObjects.BitmapText;
+  private readonly nameBg: Phaser.GameObjects.NineSlice;
+  private readonly arrow: Phaser.GameObjects.BitmapText;
 
-  constructor(scene: Phaser.Scene) {
-    const boxW = GAME_WIDTH - MARGIN * 2;
+  constructor(private readonly scene: Phaser.Scene) {
     const boxY = GAME_HEIGHT - MARGIN - BOX_H;
-
-    const bg = scene.add
-      .rectangle(MARGIN, boxY, boxW, BOX_H, 0x101838, 0.94)
-      .setOrigin(0)
-      .setStrokeStyle(1, 0xd8d8f0);
-    this.body = scene.add.text(MARGIN + PADDING, boxY + 4, '', textStyle({ lineSpacing: 1 }));
-    this.arrow = scene.add.text(MARGIN + boxW - 10, boxY + BOX_H - 12, '▼', textStyle({ fontSize: '8px' }));
+    const bg = scene.add.image(MARGIN, boxY, UiKeys.TextBox).setOrigin(0);
+    this.body = addPixelText(scene, MARGIN + PADDING_X, boxY + PADDING_Y, '');
+    this.arrow = addPixelText(scene, MARGIN + BOX_W - 12, boxY + BOX_H - 12, 'v', { tint: TextColors.yellow });
     scene.tweens.add({ targets: this.arrow, y: this.arrow.y + 2, duration: 300, yoyo: true, repeat: -1 });
 
-    this.nameBg = scene.add.rectangle(0, 0, 10, 12, 0x283868).setOrigin(0).setStrokeStyle(1, 0xd8d8f0);
-    this.nameText = scene.add.text(4, 1, '', textStyle({ color: '#ffe08a' }));
-    this.nameTag = scene.add.container(MARGIN + 4, boxY - 11, [this.nameBg, this.nameText]);
+    this.nameBg = scene.add.nineslice(0, 0, UiKeys.Window9, undefined, 40, 15, 4, 4, 4, 4).setOrigin(0);
+    this.nameText = addPixelText(scene, 6, 3, '', { tint: TextColors.yellow });
+    this.nameTag = scene.add.container(MARGIN + 6, boxY - 13, [this.nameBg, this.nameText]);
 
     this.container = scene.add.container(0, 0, [bg, this.body, this.arrow, this.nameTag]);
-
-    // Monospace: measure one glyph to know how many characters fit per line.
-    const probe = scene.add.text(0, 0, 'MMMMMMMMMM', textStyle());
-    const charW = probe.width / 10;
-    probe.destroy();
-    this.maxChars = Math.floor((boxW - PADDING * 2) / charW);
   }
+
+  /** Measures a line in pixels, for word-wrapping. */
+  measure = (text: string): number => measurePixelText(this.scene, text);
 
   setSpeaker(name: string | undefined): void {
     this.nameTag.setVisible(Boolean(name));
     if (!name) return;
     this.nameText.setText(name);
-    this.nameBg.setSize(this.nameText.width + 8, 12);
+    this.nameBg.setSize(this.measure(name) + 13, 15);
   }
 
   setText(text: string): void {
@@ -61,3 +55,5 @@ export class TextBox {
     this.container.destroy();
   }
 }
+
+export { LINE_HEIGHT };

@@ -41,7 +41,7 @@ export class DialogueScene extends Phaser.Scene {
     this.box = new TextBox(this);
     this.onDone = data.onDone;
     this.pages = data.lines.flatMap((line) =>
-      paginate(line.text, this.box.maxChars, TEXTBOX_LINES).map((text) => ({ speaker: line.speaker, text })),
+      paginate(line.text, this.box.maxWidth, TEXTBOX_LINES, this.box.measure).map((text) => ({ speaker: line.speaker, text })),
     );
     this.pageIndex = 0;
     this.showPage();

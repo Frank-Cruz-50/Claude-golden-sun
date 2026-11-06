@@ -3,10 +3,7 @@
     "gameTitle": "SPIRITBOUND",
     "subtitle": "Part 1",
     "pressStart": "PRESS START",
-    "footer": "M2 field build"
-  },
-  "preload": {
-    "loading": "Loading..."
+    "footer": "M3 art build"
   },
   "field": {
     "chestFound": "Found {item} x{qty}!",

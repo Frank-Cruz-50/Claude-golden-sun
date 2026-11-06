@@ -1,7 +1,10 @@
 # Field maps
 
-Maps are Tiled `.tmj` files with 16x16 tiles. Open them in Tiled; the tileset (`../tilesets/placeholder.png`) is embedded.
-Register each map in `src/data/maps.json`. `tests/content.test.ts` checks that every reference below resolves.
+Maps are Tiled `.tmj` files with 16x16 tiles, using the embedded `field` tileset (`../tilesets/field.png`).
+
+- **How they're made:** they're **generated** by `tools/art/maps.mjs`, painted with the helpers in `tools/art/mapgen.mjs` (houses, fences, paths, rugs, and so on). Edit the layout there and run `node tools/art/build.mjs`. Edits made in Tiled are overwritten on the next build.
+- **Registering:** list each map in `src/data/maps.json`.
+- **Checks:** `tests/content.test.ts` verifies that every reference below resolves.
 
 ## Layers
 

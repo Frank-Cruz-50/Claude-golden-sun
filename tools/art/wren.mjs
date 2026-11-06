@@ -184,7 +184,7 @@ export const LEGS_SIDE = {
   ],
 };
 
-const BACK_HALF = [
+export const BACK_HALF = [
   ...FRONT_HALF.slice(0, 9),
   '....hhhhhhhh',
   '....hhhhhhhh',

@@ -4,7 +4,9 @@
 //   2  cliff face (index bits: top1 left2 right4 bottom8 = which edges are exposed)
 //   3  misc: grass variants, door, tree, torch, barrel, rock, bush, flowers
 //   4  variants: 0-5 plain grass, 6-8 plain path (picked by position to hide repetition)
+//   5+ town and interior rows (see town.mjs)
 import { Canvas, hex, rng, valueNoise, BAYER4 } from './lib.mjs';
+import { buildTown, townCollidingTiles, TOWN_ROWS } from './town.mjs';
 
 const T = 16;
 export const COLS = 16;
@@ -14,8 +16,9 @@ export const MISC = {
 };
 export const ROW = { path: 0, water: 1, cliff: 2, misc: 3, variants: 4 };
 export const tileIndex = (row, col) => row * COLS + col;
+export const TOTAL_ROWS = 5 + TOWN_ROWS;
 
-const C = {
+export const C = {
   g0: hex('#24561c'), g1: hex('#347a24'), g2: hex('#4a9a2e'), g3: hex('#6cbc3a'), g4: hex('#9ad85a'),
   d0: hex('#7a4e26'), d1: hex('#a8743a'), d2: hex('#c8964e'), d3: hex('#e0b86c'), d4: hex('#f2d896'),
   w0: hex('#163a7a'), w1: hex('#2456b0'), w2: hex('#3a7ad8'), w3: hex('#7ab8f0'), w4: hex('#d8f0ff'),
@@ -29,7 +32,7 @@ const C = {
 const wrap = (v) => ((v % T) + T) % T;
 
 /** Paints the grass texture into tile (ox,oy) of canvas, where mask(x,y) allows it. */
-function grassTexture(c, ox, oy, seed, mask = () => true) {
+export function grassTexture(c, ox, oy, seed, mask = () => true) {
   const n = valueNoise(seed, 4);
   for (let y = 0; y < T; y++)
     for (let x = 0; x < T; x++) {
@@ -49,7 +52,7 @@ function grassTexture(c, ox, oy, seed, mask = () => true) {
   }
 }
 
-function dirtTexture(c, ox, oy, seed, mask = () => true) {
+export function dirtTexture(c, ox, oy, seed, mask = () => true) {
   const n = valueNoise(seed, 4);
   for (let y = 0; y < T; y++)
     for (let x = 0; x < T; x++) {
@@ -65,7 +68,7 @@ function dirtTexture(c, ox, oy, seed, mask = () => true) {
   }
 }
 
-function waterTexture(c, ox, oy, seed, mask = () => true) {
+export function waterTexture(c, ox, oy, seed, mask = () => true) {
   for (let y = 0; y < T; y++)
     for (let x = 0; x < T; x++) if (mask(x, y)) c.set(ox + x, oy + y, (x + y * 3) % 11 === 0 ? C.w2 : C.w1);
   const r = rng(seed);
@@ -80,7 +83,7 @@ function waterTexture(c, ox, oy, seed, mask = () => true) {
  * drawn where the bilinear field crosses 0.5; the wobble fades to zero at tile
  * edges so neighbouring tiles always line up.
  */
-function cornerMask(bits, seed) {
+export function cornerMask(bits, seed) {
   const k = [bits & 1, (bits >> 1) & 1, (bits >> 2) & 1, (bits >> 3) & 1].map(Number);
   const n = valueNoise(seed, 4);
   return (x, y) => {
@@ -91,11 +94,12 @@ function cornerMask(bits, seed) {
   };
 }
 
-function blendRow(c, row, fill, edgeOut, edgeIn) {
+/** 16 corner-blend tiles of `fill` over `outside` (grass by default). */
+export function blendRow(c, row, fill, edgeOut, edgeIn, outside = grassTexture) {
   for (let bits = 0; bits < 16; bits++) {
     const ox = bits * T, oy = row * T;
     const inB = cornerMask(bits, 40 + bits);
-    grassTexture(c, ox, oy, 11 + (bits % 3), (x, y) => !inB(x, y));
+    outside(c, ox, oy, 11 + (bits % 3), (x, y) => !inB(x, y));
     fill(c, ox, oy, 5 + bits, inB);
     // edge lines: dark rim on the grass side, highlight/shadow on the inner side
     for (let y = 0; y < T; y++)
@@ -125,7 +129,7 @@ function grassLip(c, ox, oy) {
 }
 
 /** Stone wall texture: rows of rounded stones with dark mortar, tileable. */
-function stoneFace(seed) {
+export function stoneFace(seed) {
   const c = new Canvas(T, T);
   const r = rng(seed);
   c.rect(0, 0, T, T, C.r0);
@@ -301,13 +305,14 @@ export function outline(p) {
 }
 
 export function buildTileset() {
-  const c = new Canvas(COLS * T, 5 * T);
+  const c = new Canvas(COLS * T, TOTAL_ROWS * T);
   blendRow(c, ROW.path, dirtTexture, C.g0, C.d4);
   blendRow(c, ROW.water, waterTexture, C.g0, C.w4);
   cliffRow(c);
   drawMisc(c);
   for (let i = 0; i < 6; i++) grassTexture(c, i * T, ROW.variants * T, 101 + i);
   for (let i = 0; i < 3; i++) dirtTexture(c, (6 + i) * T, ROW.variants * T, 201 + i);
+  buildTown(c);
   return c;
 }
 
@@ -320,5 +325,6 @@ export function collidingTiles() {
     ids.push(tileIndex(ROW.cliff, bits));
   }
   for (const k of ['doorTop', 'treeBL', 'treeBR', 'torchBottom', 'barrel', 'rock', 'bush', 'stump']) ids.push(tileIndex(ROW.misc, MISC[k]));
+  ids.push(...townCollidingTiles());
   return ids.sort((a, b) => a - b);
 }

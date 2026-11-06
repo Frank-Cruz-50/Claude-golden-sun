@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { GAME_HEIGHT, GAME_WIDTH, mapCacheKey, SceneKeys, TextureKeys, TILE_SIZE, tilesetTextureKey } from '../config';
+import { GAME_HEIGHT, GAME_WIDTH, mapCacheKey, PropFrames, SceneKeys, TILE_SIZE, tilesetTextureKey, UiKeys } from '../config';
 import dialogueData from '../data/dialogue.json';
 import fieldConfig from '../data/field.json';
 import itemsData from '../data/items.json';
@@ -92,7 +92,7 @@ export class FieldScene extends Phaser.Scene {
         case 'sign':
           this.signs.push(obj);
           if (!obj.hidden) {
-            this.add.image(obj.x * TILE_SIZE, obj.y * TILE_SIZE, TextureKeys.Sign).setOrigin(0).setDepth((obj.y + 1) * TILE_SIZE - 1);
+            this.add.image(obj.x * TILE_SIZE, obj.y * TILE_SIZE, UiKeys.Props, PropFrames.Sign).setOrigin(0).setDepth((obj.y + 1) * TILE_SIZE - 1);
           }
           break;
         case 'chest':

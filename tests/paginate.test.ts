@@ -35,3 +35,20 @@ describe('formatText', () => {
     expect(formatText('Hi {player}, {missing}! x{qty}', { player: 'Wren', qty: 2 })).toBe('Hi Wren, {missing}! x2');
   });
 });
+
+describe('wrapText with a pixel measure', () => {
+  // narrow letters (i, l) count 2px, everything else 6px
+  const px = (s: string) => [...s].reduce((w, ch) => w + ('il '.includes(ch) ? 2 : 6), 0);
+
+  it('wraps by measured width, not character count', () => {
+    expect(wrapText('mmm ill mmm', 30, px)).toEqual(['mmm ill', 'mmm']);
+  });
+
+  it('keeps every line within the width', () => {
+    for (const line of wrapText('a kind light in the old lamp shrine', 40, px)) expect(px(line)).toBeLessThanOrEqual(40);
+  });
+
+  it('hard-splits a word wider than the line', () => {
+    expect(wrapText('mmmmmmmm', 24, px)).toEqual(['mmmm', 'mmmm']);
+  });
+});

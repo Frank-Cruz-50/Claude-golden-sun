@@ -78,5 +78,10 @@
     {
       "text": "A heavy door, set into the hillside. Someone has left the torches burning."
     }
+  ],
+  "brindlewick.mill_door": [
+    {
+      "text": "The mill door is barred. Flour dust glitters on the step."
+    }
   ]
 }
